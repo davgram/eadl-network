@@ -43,7 +43,6 @@ Lets install the Windows Server 2025
 
 
 
-MINE:
 
 ## 3) Static IP on DC
 
@@ -52,11 +51,10 @@ MINE:
   - Mask: 255.255.255.0  
   - Gateway: 10.0.0.1  
   - Preferred DNS: 10.0.0.5 (self)  
-- Rationale: DC must be reachable at a fixed address, and clients need to resolve via the DC’s DNS. [file:55]  
+- Rationale: DC must be reachable at a fixed address, and clients need to resolve via the DC’s DNS. 
 
-Add screenshot: ./assets/images/ad/03-ipv4-static.png with IPv4 details. [file:55]
+<img src="../assets/images/ad/staticip.png" alt="VBox NIC on eadl-network" width="800">
 
-MINE:
 
 ## 4) Add AD DS, DNS, DHCP roles
 
@@ -65,6 +63,8 @@ MINE:
 Add screenshot: ./assets/images/ad/04-add-roles.png showing AD DS/DNS/DHCP selected. [file:55]
 
 MINE:
+
+<img src="../assets/images/ad/selectserverroles.png" alt="VBox NIC on eadl-network" width="800">
 
 ## 5) Promote to domain controller
 
