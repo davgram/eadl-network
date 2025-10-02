@@ -75,13 +75,15 @@ Add screenshots with filenames matching the references above into docs/assets/im
 
 ## Sections
 
-- [Build enterprise network](sections/01-build-enterprise-network.md)
-- [Active Directory setup](sections/02-active-directory-setup.md)
-- [Windows client](sections/03-windows-client.md)
-- [Linux client AD join](sections/04-linux-client-ad-join.md)
-- [Corporate server & MailHog](sections/05-corp-server-mailhog.md)
-- [Security Onion](sections/06-security-onion.md)
-- [Wazuh manager & agents](sections/07-wazuh-manager-agents.md)
-- [Agent group configs](sections/08-agents-group-configs.md)
-- [Snapshots & baselines](sections/09-snapshots-and-baselines.md)
+- [01 — Active Directory baseline](sections/01-ad-baseline.md)
+- [02 — Windows workstation (AD join)](sections/02-windows-workstation.md)
+- [03 — Linux workstation (AD join)](sections/03-linux-workstation.md)
+- [04 — Corporate server & MailHog](sections/04-corporate-server-mailhog.md)
+- [05 — Security Onion desktop](sections/05-security-onion-desktop.md)
+- [06 — Security server (sec-box) prep](sections/06-security-server-sec-box.md)
+- [07 — Wazuh manager install + disk expansion](sections/07-wazuh-manager-install.md)
+- [08 — Enroll Wazuh agents (Win/Linux)](sections/08-wazuh-agents-enroll.md)
+- [09 — Wazuh groups & agent.conf](sections/09-wazuh-groups-agentconf.md)
+- [10 — Users, mapping & snapshots](sections/10-users-and-snapshots.md)
+- [11 — Optional: Attacker & simulation](sections/11-attacker-simulation.md)
 
