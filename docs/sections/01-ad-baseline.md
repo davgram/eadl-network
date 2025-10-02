@@ -16,7 +16,8 @@ In the following chapter i will deploy the VMs and configurations
 
 
 
-The first important part is configuring the NAT Network
+The first important part is configuring the NAT Network 
+
 <b> In this case the NAT network will allow to create a virtual private LAN with its own virtual router thats similate a real LAN. </b>
 
 Put the DC and all the hosts in a private
@@ -27,9 +28,9 @@ Put the DC and all the hosts in a private
 ## 2) Install Windows Server 2025
 
 - Mount ISO “Windows Server 2025” and install with a new partition; set local Administrator password “CiaoCiao123!” during setup. [file:55]  
-- Post‑install: disable screensaver (usability). [file:55]  
+- Post‑install: disable screensaver (usability).
 
-Add screenshot: ./assets/images/ad/02-server-installed.png after first logon. [file:55]
+<img src="../assets/images/ad/create_network_VMs.png" alt="VBox NIC on eadl-network" width="800">
 
 MINE:
 
