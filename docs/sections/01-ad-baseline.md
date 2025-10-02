@@ -23,7 +23,8 @@ In this case the NAT network will allow to create a virtual private LAN with its
 
 Put the DC and all the hosts in a private
 
-../assets/images/ad/nat_network_eadl-dc.png
+<img src="../assets/images/ad/nat_network_eadl-dc.png" alt="VBox NIC on eadl-network" width="800">
+
 
 ## 2) Install Windows Server 2025
 
