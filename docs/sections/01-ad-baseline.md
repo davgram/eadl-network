@@ -15,11 +15,9 @@ In the following chapter i will deploy the VMs and configurations
 
 
 
-MINE: I created the VM with Virtual Box
-Name: eadl-dc (Windows Server 2025), 2 vCPU, 4GB RAM, 50GB disk, is  enough for our goals.
 
 The first important part is configuring the NAT Network
-In this case the NAT network will allow to create a virtual private LAN with its own virtual router thats similate a real LAN.
+<b> In this case the NAT network will allow to create a virtual private LAN with its own virtual router thats similate a real LAN. </b>
 
 Put the DC and all the hosts in a private
 
