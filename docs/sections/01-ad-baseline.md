@@ -28,10 +28,20 @@ Put the DC and all the hosts in a private
 
 ## 2) Install Windows Server 2025
 
-- Mount ISO “Windows Server 2025” and install with a new partition; set local Administrator password “CiaoCiao123!” during setup. 
-- Post‑install: disable screensaver (usability).
+Lets install the Windows Server 2025
+
+4096 mb ram 2vcore
 
 <img src="../assets/images/ad/server_vm_1.png" alt="VBox NIC on eadl-network" width="800">
+
+
+- i set set local Administrator password “CiaoCiao123!” during setup. The
+
+<b> The password are easy to crack on purpose because later, i will eventually try to attack the servers. In a real enterprise, the password and the contrmisure will be way more complex. </b>
+
+- Post‑install: disable screensaver (usability).
+
+
 
 MINE:
 
