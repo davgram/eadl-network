@@ -1,6 +1,20 @@
 # Enterprise Attack Detection Lab (EADL)
 
-A practical enterprise network simulation with AD DS, Windows and Linux endpoints, a corporate server running MailHog, Security Onion for analysis, and Wazuh for endpoint logging and detection.
+This project demonstrates enterprise‑style network design, Windows/Linux administration, and SOC workflows by building a small business network with Active Directory, a corporate server, Security Onion, and Wazuh for endpoint telemetry and detections. The goal is to document reproducible builds, clear evidence (screenshots, configs), and measurable outcomes recruiters can review quickly.
+
+> Images: place PNG/JPG files in docs/assets/images and reference them with relative paths like `./assets/images/topology.png`. This works reliably on GitHub Pages. Do not start image paths with `/`. 
+
+## About this project
+
+- Why: Demonstrate practical skills for SOC/Blue Team roles—AD setup, endpoint management, logging, and analysis in a realistic lab.  
+- What: VirtualBox NAT lab with a domain controller, Windows and Linux clients, a MailHog server, a Wazuh manager, and a Security Onion workstation.  
+- Evidence: Build steps, configuration tables, and screenshots showing domain joins, agent enrollment, dashboards, and test data flows.
+
+### Topology
+
+![Enterprise topology](./assets/images/topology.png)
+
+Add a simple diagram (draw.io/diagrams.net or screenshots) that shows the NAT network, DC, clients, Wazuh, Security Onion, and the corporate server. Save as docs/assets/images/topology.png.
 
 ### Configuration summary
 
@@ -36,7 +50,7 @@ A practical enterprise network simulation with AD DS, Windows and Linux endpoint
 | DC DNS forwarder | 8.8.8.8 |
 | DHCP scope (lab) | 10.0.0.100–10.0.0.200 |
 
-#### Accounts (public-safe placeholders)
+#### Accounts (public‑safe placeholders)
 
 | Account | Password | Host |
 |---|---|---|
@@ -47,7 +61,15 @@ A practical enterprise network simulation with AD DS, Windows and Linux endpoint
 | Wazuh admin | [REDACTED] | sec-box |
 | Security Onion workstation | [REDACTED] | eadl-sec-work |
 
-> Note: Keep real credentials out of public repos; use placeholders and store secrets privately. [file:55]
+### Evidence gallery
+
+- Domain join (Windows): ![Windows join](./assets/images/win-join.png)  
+- Domain join (Linux): ![Linux join](./assets/images/linux-join.png)  
+- Wazuh manager dashboard: ![Wazuh UI](./assets/images/wazuh-ui.png)  
+- Security Onion desktop: ![SO desktop](./assets/images/so-desktop.png)  
+- MailHog UI: ![MailHog](./assets/images/mailhog-ui.png)
+
+Add screenshots with filenames matching the references above into docs/assets/images. Use short, clear captions in the surrounding text.
 
 ---
 
@@ -62,3 +84,4 @@ A practical enterprise network simulation with AD DS, Windows and Linux endpoint
 - [Wazuh manager & agents](sections/07-wazuh-manager-agents.md)
 - [Agent group configs](sections/08-agents-group-configs.md)
 - [Snapshots & baselines](sections/09-snapshots-and-baselines.md)
+
