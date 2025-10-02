@@ -13,8 +13,9 @@ In the following chapter i will deploy the VMs and configurations
 
 ## 1) VM and network
 
+The first important part is creating the NAT Network as in photo
 
-
+<img src="../assets/images/ad/create_network_VMs.png" alt="VBox NIC on eadl-network" width="800">
 
 The first important part is configuring the NAT Network 
 
@@ -30,7 +31,7 @@ Put the DC and all the hosts in a private
 - Mount ISO “Windows Server 2025” and install with a new partition; set local Administrator password “CiaoCiao123!” during setup. [file:55]  
 - Post‑install: disable screensaver (usability).
 
-<img src="../assets/images/ad/create_network_VMs.png" alt="VBox NIC on eadl-network" width="800">
+
 
 MINE:
 
