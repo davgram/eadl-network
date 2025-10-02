@@ -2,16 +2,37 @@
 
 ## Configuration summary
 ### Configuration summary
-#### Hosts
-| Hostname | IP Address | Function |
-|---|---|---|
-| eadl-dc [file:55] | 10.0.0.5 [file:55] | Domain Controller (AD DS, DNS, DHCP) [file:55] |
-| eadl-win-client [file:55] | 10.0.0.100 (static) [file:55] | Windows Workstation (domain‑joined) [file:55] |
-| eadl-linux-client [file:55] | 10.0.0.101 [file:55] | Linux Desktop (AD‑joined via Winbind) [file:55] |
-| eadl-corp-svr [file:55] | 10.0.0.8 [file:55] | Corporate Server (MailHog) [file:55] |
-| sec-box [file:55] | 10.0.0.10 [file:55] | Wazuh Manager (SIEM) [file:55] |
-| eadl-sec-work [file:55] | 10.0.0.103/24 [file:55] | Security Onion desktop (NSM/analysis) [file:55] |
-
+Hosts (paste this)
+Hostname	IP Address	Function
+eadl-dc	10.0.0.5	Domain Controller (AD DS, DNS, DHCP)
+eadl-win-client	10.0.0.100	Windows Workstation (domain-joined)
+eadl-linux-client	10.0.0.101	Linux Desktop (AD-joined via Winbind)
+eadl-corp-svr	10.0.0.8	Corporate Server (MailHog)
+sec-box	10.0.0.10	Wazuh Manager (SIEM)
+eadl-sec-work	10.0.0.103	Security Onion desktop (NSM/analysis)
+Accounts and credentials (public-safe placeholders)
+Account	Password	Host
+Domain Administrator	[REDACTED]	eadl-dc
+Win client user (domain)	[REDACTED]	eadl-win-client
+Linux client user (domain)	[REDACTED]	eadl-linux-client
+Corp server admin	[REDACTED]	eadl-corp-svr
+Wazuh admin	[REDACTED]	sec-box
+SO workstation user	[REDACTED]	eadl-sec-work
+VM specs (paste this)
+VM Name	Operating System	Specs	Storage (min)
+eadl-dc	Windows Server 2025	2 CPU / 4096 MB	50 GB
+eadl-win-client	Windows 11 Enterprise	2 CPU / 4096 MB	80 GB
+eadl-linux-client	Ubuntu 22.04 Desktop	1 CPU / 2048 MB	80 GB
+eadl-sec-work	Security Onion 2.4.x	1 CPU / 2048 MB	55 GB
+sec-box	Ubuntu 22.04 Desktop	2 CPU / 4096 MB	80 GB
+eadl-corp-svr	Ubuntu 22.04 Server	1 CPU / 2048 MB	25 GB
+Core network (paste this)
+Setting	Value
+VirtualBox NAT network name	eadl-network
+Subnet / Gateway	10.0.0.0/24, gw 10.0.0.1
+AD Domain	corp.eadl-dc.com
+DC DNS forwarder	8.8.8.8
+DHCP scope (lab)	10.0.0.100–10.0.0.200
 
 
 ## Sections
