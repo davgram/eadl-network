@@ -74,15 +74,18 @@ MINE:
 
 MINE:
 
-Add screenshots:  
-- ./assets/images/ad/05-promote-forest.png (root domain name) [file:55]  
-- ./assets/images/ad/06-dsrm-options.png (controller options) [file:55]
+<img src="../assets/images/ad/config1.png" alt="VBox NIC on eadl-network" width="800">
+<img src="../assets/images/ad/config2.png" alt="VBox NIC on eadl-network" width="800"
 
 Tip: If the VM hangs, perform a safe reboot and log back in to the domain. [file:55]
 
 MINE:
 
 ## 6) Configure DNS forwarders
+
+<img src="../assets/images/ad/dnsmanager1.png" alt="VBox NIC on eadl-network" width="800">
+
+<img src="../assets/images/ad/dnsmanager2.png" alt="VBox NIC on eadl-network" width="800">
 
 - Tools → DNS → Right‑click server → Properties → Forwarders → Edit → add 8.8.8.8. Purpose: forward unknown names externally. [file:55]  
 - Validate with powershell: ping google.it and nslookup corp.eadl-dc.com should answer 10.0.0.5. [file:55]  
