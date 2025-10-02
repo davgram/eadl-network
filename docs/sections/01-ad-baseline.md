@@ -28,10 +28,10 @@ Put the DC and all the hosts in a private
 
 ## 2) Install Windows Server 2025
 
-- Mount ISO “Windows Server 2025” and install with a new partition; set local Administrator password “CiaoCiao123!” during setup. [file:55]  
+- Mount ISO “Windows Server 2025” and install with a new partition; set local Administrator password “CiaoCiao123!” during setup. 
 - Post‑install: disable screensaver (usability).
 
-
+<img src="../assets/images/ad/server_vm_1.png" alt="VBox NIC on eadl-network" width="800">
 
 MINE:
 
