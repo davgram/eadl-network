@@ -35,11 +35,11 @@ nav_order: 3
 
 - Active Directory baseline is online on `eadl-dc (10.0.0.5)` with DNS and a forwarder configured. [file:55]  
 - VirtualBox NAT Network `eadl-network (10.0.0.0/24, gateway 10.0.0.1)` exists and is used by all VMs. [file:55]  
-- Ubuntu 22.04.5 Desktop ISO downloaded to the host. [file:55]
+- Ubuntu 22.04.5 Desktop ISO downloaded to the host. 
 
 ## 1) Create the VM (VirtualBox)
 
-- Name: `eadl-linux-client`, `2 vCPU`, `2 GB RAM`, `25 GB` disk; attach Adapter 1 to NAT Network → Name: `eadl-network`; Adapter type: Intel PRO/1000 MT Desktop; Cable connected. [file:55]
+- Name: `eadl-linux-client`, `2 vCPU`, `2 GB RAM`, `25 GB` disk; attach Adapter 1 to NAT Network → Name: `eadl-network`; Adapter type: Intel PRO/1000 MT Desktop; Cable connected.
 
 <details>
   <summary><strong>Click to show screenshot</strong></summary>
