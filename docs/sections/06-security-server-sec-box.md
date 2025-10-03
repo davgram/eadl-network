@@ -1,9 +1,7 @@
-[← Back to index](../index.md){: .btn .btn-blue }
 ---
-title: Windows workstation (AD join)
+title: Security server (sec-box) prep
 nav_order: 6
 ---
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -46,12 +44,12 @@ nav_order: 6
 <h1>Security server (sec-box) prep</h1>
 
 <div class="callout">
-  This page follows the same structure as the Linux workstation (03) page but for <b>sec-box</b>: clone the VM, rename host, create a local admin, set a static IP, join the AD domain, verify Winbind, and snapshot before Wazuh.
+  Clone the Linux workstation into <code>sec-box</code>, create a local admin, set a static IP, join the AD domain, verify Winbind, and snapshot the VM before installing Wazuh. Screenshots live in <code>/assets/images/06-security-server-sec-box</code>.
 </div>
 
 <hr>
 
-<h2>1) Clone the Linux Machine</h2>
+<h2>1) Clone the Linux machine</h2>
 <ul>
   <li>VirtualBox → select Linux workstation → Right‑click → Clone → <b>Full clone</b> → include snapshots → Finish.</li>
   <li>Power on the clone.</li>
@@ -60,10 +58,10 @@ nav_order: 6
 <h2>2) Rename hostname</h2>
 <pre><code>sudo nano /etc/hostname
 </code></pre>
-<p>Replace the current value with:</p>
+<p>Replace contents with:</p>
 <pre><code>sec-box
 </code></pre>
-<p>Then reboot:</p>
+<p>Reboot:</p>
 <pre><code>sudo reboot
 </code></pre>
 
@@ -72,41 +70,41 @@ nav_order: 6
 <pre><code>cd ..
 sudo adduser sec-user
 </code></pre>
-<p><img class="img" src="../assets/sec-boxprep/page.png" alt="adduser sec-user prompt"></p>
+<p><img class="img" src="../assets/images/06-security-server-sec-box/page.png" alt="adduser sec-user prompt"></p>
 
 <p>Grant sudo and verify:</p>
 <pre><code>sudo usermod -aG sudo sec-user
 sudo su - sec-user
 whoami
 </code></pre>
-<p><img class="img" src="../assets/sec-boxprep/whoami.png" alt="whoami shows sec-user"></p>
+<p><img class="img" src="../assets/images/06-security-server-sec-box/whoami.png" alt="whoami shows sec-user"></p>
 
 <h2>4) Network settings (static IP)</h2>
-<p>Top nav → Wired connected → Wired Settings → gear icon → IPv4 → Manual → configure as shown.</p>
-<p><img class="img" src="../assets/sec-boxprep/ipstatic.png" alt="IPv4 static configuration"></p>
+<p>Top bar → Wired connected → Wired Settings → gear icon → IPv4 → Manual → apply settings as in the screenshot.</p>
+<p><img class="img" src="../assets/images/06-security-server-sec-box/ipstatic.png" alt="IPv4 static configuration"></p>
 
 <p>Confirm connectivity to the domain controller:</p>
 <pre><code>ping -c 3 eadl-dc
 </code></pre>
-<p><img class="img" src="../assets/sec-boxprep/ping.png" alt="Ping DC successful"></p>
+<p><img class="img" src="../assets/images/06-security-server-sec-box/ping.png" alt="Ping to DC successful"></p>
 
 <h2>5) Create the domain user on the DC</h2>
 <ul>
-  <li>On the DC: Tools → Active Directory Users and Computers → Users → Right‑click → New → User → finish wizard.</li>
+  <li>On the DC: Tools → Active Directory Users and Computers → Users → Right‑click → New → User → complete wizard.</li>
 </ul>
-<p><img class="img" src="../assets/sec-boxprep/adduser.png" alt="Create new AD user wizard"></p>
+<p><img class="img" src="../assets/images/06-security-server-sec-box/adduser.png" alt="Create new AD user wizard"></p>
 
-<p>Right‑click the user → Properties → <b>Member Of</b> → verify <b>Domain Users</b>.</p>
-<p><img class="img" src="../assets/sec-boxprep/admingroup.png" alt="Member Of shows Domain Users"></p>
+<p>Open the user → <b>Member Of</b> → verify <b>Domain Users</b>.</p>
+<p><img class="img" src="../assets/images/06-security-server-sec-box/admingroup.png" alt="Member Of shows Domain Users"></p>
 
-<p>(Optional) Create an admin group and assign users:</p>
+<p>(Optional) Create an admin group and assign members.</p>
 <div class="pair">
-  <img class="img" src="../assets/sec-boxprep/admingroup2.png" alt="Create admin group">
-  <img class="img" src="../assets/sec-boxprep/domainuser.png" alt="Add Domain Users to group">
+  <img class="img" src="../assets/images/06-security-server-sec-box/admingroup2.png" alt="Create admin group">
+  <img class="img" src="../assets/images/06-security-server-sec-box/domainuser.png" alt="Add Domain Users to group">
 </div>
 
 <h2>6) Join sec-box to the domain</h2>
-<p>Ensure DNS points to the DC and system time matches the DC.</p>
+<p>Ensure DNS points to the DC and the clock is in sync.</p>
 <pre><code>sudo systemctl restart winbind
 sudo net ads join -U Administrator
 sudo systemctl restart winbind
@@ -115,27 +113,17 @@ sudo systemctl restart winbind
 <p>Verify enumeration:</p>
 <pre><code>wbinfo -u | head
 </code></pre>
-<p><img class="img" src="../assets/sec-boxprep/wbinfo.png" alt="wbinfo -u output"></p>
+<p><img class="img" src="../assets/images/06-security-server-sec-box/wbinfo.png" alt="wbinfo -u output shows domain users"></p>
 
 <h2>7) First domain login (home created)</h2>
 <pre><code>sudo login
 </code></pre>
-<p>After login, the domain user’s home directory is created automatically.</p>
-<p><img class="img" src="../assets/sec-boxprep/dir.png" alt="Home directory created for domain user"></p>
+<p>After first domain login a home directory is created automatically.</p>
+<p><img class="img" src="../assets/images/06-security-server-sec-box/dir.png" alt="Home directory created for domain user"></p>
 
-<h2>8) Snapshot before Wazuh installation</h2>
+<h2>8) Snapshot before Wazuh</h2>
 <p>Create a VM snapshot named <b>pre‑wazuh</b> in VirtualBox.</p>
-<p><img class="img" src="../assets/sec-boxprep/snapshot.png" alt="Snapshot pre-wazuh created"></p>
-
-<hr>
-
-<h2>Troubleshooting (Jekyll/Pages)</h2>
-<ul>
-  <li>Front matter must be the first lines in the file with exact <code>---</code> delimiters (no spaces or BOM).</li>
-  <li>Leave blank lines before and after HTML blocks so Kramdown doesn’t treat following Markdown as raw text.</li>
-  <li>If embedding complex HTML inside Markdown, add <code>markdown="1"</code> on the container to force parsing.</li>
-  <li>Button classes like <code>{: .btn .btn-blue }</code> only apply if the page renders without earlier markup errors.</li>
-</ul>
+<p><img class="img" src="../assets/images/06-security-server-sec-box/snapshot.png" alt="Snapshot pre-wazuh created"></p>
 
 </div>
 </body>
