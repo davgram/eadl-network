@@ -20,7 +20,11 @@ Goal: Build a Windows 11 Enterprise workstation named eadl-win-client, give it a
 Lets go to Virtual Box Creating a new VM with Windows 11, same specs as before.
 - Name: eadl-win-client, 2 vCPU, 4 GB RAM, 80 GB disk
 
-<img src="../assets/images/windowsworkstation/createvm.png" alt="VBox NIC on eadl-network" width="800">
+<details>
+  <summary>Click to show screenshot</summary>
+
+  <img src="../assets/images/windowsworkstation/createvm.png" alt="VBox NIC on eadl-network" width="800">
+</details>
 
 
 ## 2) Install Windows 11 + Host-Only
