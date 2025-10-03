@@ -88,7 +88,7 @@ Goal: Build an Ubuntu 22.04 Desktop workstation named `eadl-linux-client`, give 
       <p style="margin:6px 0;">That command installs the full AD join stack on Ubuntu—Samba + Winbind + Kerberos—so the Linux workstation can join <code>corp.eadl-dc.com</code> and let CORP users log in with domain credentials.</p>
     </div>
   </details>
-
+After issuing the command i was prompted with those following pages, lets configure Kerberos: Lets add <B>CORP.EADL-DC.COM</B>
   <!-- Kerberos prompts screenshots -->
   <h4 style="margin:18px 0 8px;">Kerberos configuration prompts</h4>
   <div style="display:flex;gap:10px;flex-wrap:wrap;">
