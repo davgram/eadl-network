@@ -15,17 +15,8 @@ nav_order: 6
   padding:14px 16px;
   border-radius:8px;
   margin:12px 0 18px 0;
-">
-  <div style="display:flex;align-items:flex-start;gap:10px;">
-    <div style="font-size:22px;line-height:1;">🛡️</div>
-    <div>
-      <p style="margin:0 0 6px 0;font-weight:600;">Goal</p>
-      <p style="margin:0;">
-        Clone the Linux workstation into <code>sec-box</code>, create a local admin, set a static IP, join the AD domain,
-        verify Winbind, and snapshot the VM before installing Wazuh.
-      </p>
-    </div>
-  </div>
+" markdown="1">
+Build a clone of the Linux workstation as <code>sec-box</code>, create a local admin, set a static IP, join the AD domain, verify Winbind, and snapshot the VM before installing Wazuh.
 </div>
 
 ## 1) Clone the VM
