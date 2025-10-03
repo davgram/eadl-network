@@ -80,3 +80,5 @@ Set a static IPv4 address and DNS so AD lookups work reliably: `IP 10.0.0.100`, 
 
   <img src="../assets/images/windowsworkstation/logonsamw.png" alt="VBox NIC on eadl-network" width="800">
 </details>
+
+The Windows Worstation ended. Next section
