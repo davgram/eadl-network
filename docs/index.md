@@ -18,20 +18,34 @@
 </div>
 
 <!-- Hero header -->
-<div style="border:1px solid #e5e7eb;background:linear-gradient(180deg,#f8fafc, #ffffff);padding:18px 18px;border-radius:12px;margin:10px 0 18px 0;">
+<div style="border:1px solid #e5e7eb;background:linear-gradient(180deg,#f8fafc, #ffffff);padding:18px 18px;border-radius:12px;margin:10px 0 16px 0;">
   <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;justify-content:space-between;">
     <div style="font-size:20px;font-weight:700;line-height:1.2;">Enterprise Attack Detection Lab</div>
     <div style="display:flex;gap:6px;flex-wrap:wrap;">
       <span style="border:1px solid #e5e7eb;background:#eff6ff;color:#1d4ed8;padding:4px 8px;border-radius:999px;font-size:12px;">Active Directory</span>
       <span style="border:1px solid #e5e7eb;background:#ecfdf5;color:#065f46;padding:4px 8px;border-radius:999px;font-size:12px;">Linux</span>
-      <span style="border:1px solid #e5e7eb;background:#fff7ed;color:#9a3412;padding:4px 8px;border-radius:999px;font-size:12px;">Security Onion</span>
+      <span style="border:1px solid #e5e7eb;background:#fff7ed;color:#9a3412;padding:4px 8px;border-radius:999px;font-size:12px;">Windows</span>
       <span style="border:1px solid #e5e7eb;background:#fef2f2;color:#991b1b;padding:4px 8px;border-radius:999px;font-size:12px;">Wazuh</span>
-      <span style="border:1px solid #e5e7eb;background:#f5f3ff;color:#5b21b6;padding:4px 8px;border-radius:999px;font-size:12px;">SIEM</span>
+      <span style="border:1px solid #e5e7eb;background:#f5f3ff;color:#5b21b6;padding:4px 8px;border-radius:999px;font-size:12px;">Security Onion</span>
+      <span style="border:1px solid #e5e7eb;background:#e0f2fe;color:#075985;padding:4px 8px;border-radius:999px;font-size:12px;">Detection</span>
     </div>
   </div>
   <p style="margin:10px 0 0 0;">
     This project demonstrates enterprise‑style network design, Windows/Linux administration, and SOC workflows by building a small business network with Active Directory, a corporate server, Security Onion, and Wazuh for endpoint telemetry and detections. The goal is to document reproducible builds, clear evidence (screenshots, configs), and measurable outcomes recruiters can review quickly.
   </p>
+</div>
+
+<!-- What this lab does: UX summary -->
+<div style="border:1px solid #e5e7eb;background:#f8fafc;padding:14px;border-radius:10px;margin:10px 0 16px 0;">
+  <p style="margin:0 0 6px 0;font-weight:700;">What this lab does</p>
+  <ul style="margin:0;padding-left:18px;">
+    <li>Set up a simulated enterprise network with multiple workstations and a Windows Server domain controller.</li>
+    <li>Deploy Wazuh (XDR/SIEM) and Security Onion for endpoint and network visibility.</li>
+    <li>Run attacker techniques against the lab, then detect, triage, and document the defenses and findings.</li>
+  </ul>
+  <div style="border-left:4px solid #f59e0b;background:#fffbea;padding:8px 10px;border-radius:6px;margin-top:10px;">
+    <strong>Note:</strong> Weak passwords are used intentionally for cracking/detection exercises; this is not acceptable in production and is confined to the lab.
+  </div>
 </div>
 
 <!-- Image tip -->
