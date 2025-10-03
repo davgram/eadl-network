@@ -101,10 +101,11 @@ After issuing the command i was prompted with those following pages, lets config
 
   <!-- smb.conf -->
   <h3 style="margin:18px 0 8px;">Step 3 — Backup and edit Samba</h3>
+  smb.conf: tells Linux “join this AD domain and use these rules for users/groups.
   <pre style="background:#0b1021;color:#e5e7eb;padding:12px;border-radius:6px;overflow:auto;"><code>sudo mv /etc/samba/smb.conf /etc/samba/smb.conf.org
 sudo nano /etc/samba/smb.conf</code></pre>
 
-  <p style="margin:10px 0 6px;">THEN PASTE THOSE CODES INSIDE</p>
+  <p style="margin:10px 0 6px;">Then i ll paste the following page to configure samba</p>
   <pre style="background:#0b1021;color:#e5e7eb;padding:12px;border-radius:6px;overflow:auto;"><code>[global]
        kerberos method = secrets and keytab
        realm = PUT HERE DOMAIN CONTROLLER IN  MY CASE CORP.EADL-DC.com
@@ -118,7 +119,7 @@ sudo nano /etc/samba/smb.conf</code></pre>
        idmap config * : range = 1000000-19999999
        idmap config * : backend = autorid</code></pre>
 
-  <p style="margin:6px 0;">like this</p>
+  <p style="margin:6px 0;">using nano to display and modify the file as follow</p>
   <img src="../assets/images/linuxworkstation/smb.conf.png" alt="smb.conf after paste" style="max-width:100%;border:1px solid #eee;border-radius:6px;">
 
   <p style="margin:10px 0;">then save it using <kbd>ctrl</kbd> + <kbd>x</kbd> and then press <kbd>y</kbd></p>
