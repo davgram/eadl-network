@@ -1,141 +1,57 @@
 ---
-title: Active Directory baseline
-nav_order: 1
+title: Linux workstation (AD join)
+nav_order: 3
 ---
 
-# Active Directory baseline
+[← Back to index](../index.md){: .btn .btn-blue }
 
-Goal: Stand up eadl-dc as the forest root domain controller for corp.eadl-dc.com on a VirtualBox NAT network, with DNS and optional DHCP, and take a baseline snapshot. [file:55]
+# Linux workstation (AD join)
 
-MINE: The first part i will configure and deploy is the Domain Controller. It will provide centrilized authentification, authorization for every other host of the simulated enterprise network.
-It will provide service as DNS and optional DHCP
-In the following chapter i will deploy the VMs and configurations
+Goal: Build an Ubuntu 22.04 Desktop workstation named `eadl-linux-client`, give it a static IP on the lab NAT network, point DNS to the domain controller, and join the domain `corp.eadl-dc.com` using Samba/Winbind. [file:55]
 
-## 1) VM and network
+## Prerequisites
 
-The first important part is creating the NAT Network as in photo
+- Active Directory baseline is online on `eadl-dc (10.0.0.5)` with DNS and a forwarder configured. [file:55]  
+- VirtualBox NAT Network `eadl-network (10.0.0.0/24, gateway 10.0.0.1)` exists and is used by all VMs. [file:55]  
+- Ubuntu 22.04.5 Desktop ISO downloaded to the host. [file:55]
 
-<img src="../assets/images/ad/create_network_VMs.png" alt="VBox NIC on eadl-network" width="800">
+## 1) Create the VM (VirtualBox)
 
-The first important part is configuring the NAT Network 
+- Name: `eadl-linux-client`, `2 vCPU`, `2 GB RAM`, `25 GB` disk; attach Adapter 1 to NAT Network → Name: `eadl-network`; Adapter type: Intel PRO/1000 MT Desktop; Cable connected. [file:55]
 
-<b> In this case the NAT network will allow to create a virtual private LAN with its own virtual router thats similate a real LAN. </b>
+<details>
+  <summary><strong>Click to show screenshot</strong></summary>
+  <img src="../assets/images/linuxworkstation/01-vbox-create.png" alt="Create Ubuntu VM on eadl-network" width="850">
+</details>
 
-Put the DC and all the hosts in a private
+## 2) Install Ubuntu 22.04 Desktop
 
-<img src="../assets/images/ad/nat_network_eadl-dc.png" alt="VBox NIC on eadl-network" width="800">
+- Proceed with the standard installer; sample unattended values used in notes: real name “Sam Wilson”, username `samw`, password `password123@` (weak on purpose for lab). [file:55]  
+- After first boot, set Power → Blank screen “Never” to avoid session drops during lab work. [file:55]
 
+<details>
+  <summary><strong>Click to show screenshot</strong></summary>
+  <img src="../assets/images/linuxworkstation/02-install-ubuntu.png" alt="Ubuntu installer" width="850">
+</details>
 
-## 2) Install Windows Server 2025
+## 3) Configure network (static IP + DNS)
 
-Lets install the Windows Server 2025
+- Set static IPv4 and DNS so AD lookups are reliable: `IP 10.0.0.101`, `Mask 255.255.255.0`, `Gateway 10.0.0.1`, `DNS 10.0.0.5`. [file:55]
 
-4096 mb ram 2vcore
+<details>
+  <summary><strong>Click to show screenshot</strong></summary>
+  <img src="../assets/images/linuxworkstation/03-ipv4-static.png" alt="IPv4 static 10.0.0.101 / DNS 10.0.0.5" width="850">
+</details>
 
-<img src="../assets/images/ad/server_vm_1.png" alt="VBox NIC on eadl-network" width="800">
+## 4) Snapshot: baseline
 
+- Take a snapshot “Baseline conf” so the workstation can be restored before domain join or agent installs. [file:55]
 
-- i set set local Administrator password “CiaoCiao123!” during setup. The
+<details>
+  <summary><strong>Click to show screenshot</strong></summary>
+  <img src="../assets/images/linuxworkstation/04-snapshot-baseline.png" alt="Snapshot baseline" width="850">
+</details>
 
-<b> The password are easy to crack on purpose because later, i will eventually try to attack the servers. In a real enterprise, the password and the contrmisure will be way more complex. </b>
+## 5) Install Winbind stack
 
-- Post‑install: disable screensaver (usability).
-
-
-
-
-## 3) Static IP on DC
-
-- Control Panel → Network and Internet → Network Connections → Ethernet → IPv4. Set:  
-  - IP: 10.0.0.5  
-  - Mask: 255.255.255.0  
-  - Gateway: 10.0.0.1  
-  - Preferred DNS: 10.0.0.5 (self)  
-- Rationale: DC must be reachable at a fixed address, and clients need to resolve via the DC’s DNS. 
-
-<img src="../assets/images/ad/staticip.png" alt="VBox NIC on eadl-network" width="800">
-
-
-## 4) Add AD DS, DNS, DHCP roles
-
-- Server Manager → Add Roles and Features → Role‑based → select “Active Directory Domain Services,” “DNS Server,” and “DHCP Server,” keep defaults, Install. [file:55]  
-
-Add screenshot: ./assets/images/ad/04-add-roles.png showing AD DS/DNS/DHCP selected. [file:55]
-
-MINE:
-
-<img src="../assets/images/ad/selectserverroles.png" alt="VBox NIC on eadl-network" width="800">
-
-## 5) Promote to domain controller
-
-- Server Manager → AD DS notification “Promote this server to a domain controller.”  
-- Choose “Add a new forest,” Root domain name: corp.eadl-dc.com. [file:55]  
-- Domain Controller Options: Forest and Domain functional level = Windows Server 2025, DNS server + GC checked; set DSRM password “CiaoCiao123!”; Next → Install (VM will reboot). [file:55]  
-
-MINE:
-
-<img src="../assets/images/ad/config1.png" alt="VBox NIC on eadl-network" width="800">
-<img src="../assets/images/ad/config2.png" alt="VBox NIC on eadl-network" width="800"
-
-Tip: If the VM hangs, perform a safe reboot and log back in to the domain. [file:55]
-
-MINE:
-
-### 6) Configure DNS forwarders
-
-Why: The DC is the lab’s DNS for corp.eadl-dc.com; a forwarder lets it ask a public resolver for Internet names it doesn’t host so all clients can keep using only the DC. 
-
-1) Open DNS Manager on eadl‑dc.
-![Open DNS Manager](../assets/images/ad/dnsmanager1.png)
-
-2) Add the forwarder:
-DNS Manager → <server> → Properties → Forwarders → Edit → add 8.8.8.8 → OK.
-![Add 8.8.8.8 forwarder](../assets/images/ad/dnsmanager2.png)
-
-3) Quick test on eadl‑dc:
-
-
-## 7) Optional: DHCP scope
-
-- Tools → DHCP → IPv4 → New Scope: 10.0.0.100–10.0.0.200, mask /24; Router 10.0.0.1; DNS 10.0.0.5. [file:55]  
-- Post‑Install configuration: authorize server in AD (use CORP\Administrator), Commit; state should show “Online.” [file:55]  
-
-Add screenshots:  
-- ./assets/images/ad/09-dhcp-scope.png (range/router/DNS) [file:55]  
-- ./assets/images/ad/10-dhcp-authorized.png (server authorized) [file:55]
-
-MINE:
-
-## 8) Create initial identities
-
-Then we will create some user accounts to map to their workstations. We will create Identity and map them with corresponding Workstations, every user will have multiple workstations for example for example the developer need both linux and windows system
-To do so:
-
-- Tools → Active Directory Users and Computers → Users → New → User.
-<img src="../assets/images/ad/createuser1.png" alt="VBox NIC on eadl-network" width="800">
-
-
-
- Create “Sam Wilson” and “Chris Lee” with temporary lab password “password123@” and uncheck “User must change password at next logon” for lab workflows. 
-
- <img src="../assets/images/ad/createuser2.png" alt="VBox NIC on eadl-network" width="800">
-
-
-
-Security note: Weak passwords are intentional for simulation; never reuse outside the lab. 
-
-
-
-## 9) Baseline snapshot
-
-- VirtualBox → Machine → Take Snapshot → “Baseline conf.” Reason: quick rollback before joining clients or installing services. 
-
-
-
-## Verification checklist
-
-- Server is a domain controller for corp.eadl-dc.com; AD DS and DNS installed, DNS forwarder 8.8.8.8 set.  
-- Static IP 10.0.0.5 configured; ping/nslookup succeed; DHCP scope authorized (if using DHCP). 
-- Initial users created; baseline snapshot taken successfully. 
-
-
+Update and install required packages. [file:55]
