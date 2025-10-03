@@ -32,6 +32,13 @@ to do so i configured just for now the network adpater in Host Only Adapter and 
 
 <img src="../assets/images/windowsworkstation/skipemail.png" alt="VBox NIC on eadl-network" width="800">
 
+Then the VM will restart and lets choose the VM name
+
+<details>
+  <summary>Click to show screenshot</summary>
+
+  <img src="../assets/images/windowsworkstation/namevm.png" alt="VBox NIC on eadl-network" width="800">
+</details>
 
 ## 3) Set hostname and reboot
 
