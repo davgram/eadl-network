@@ -7,7 +7,29 @@ nav_order: 3
 
 # Linux workstation (AD join)
 
-Goal: Build an Ubuntu 22.04 Desktop workstation named `eadl-linux-client`, give it a static IP on the lab NAT network, point DNS to the domain controller, and join the domain `corp.eadl-dc.com` using Samba/Winbind. [file:55]
+<!-- Intro callout -->
+<div style="
+  border:1px solid #e5e7eb;
+  border-left:6px solid #2563eb;
+  background:#f8fafc;
+  padding:14px 16px;
+  border-radius:8px;
+  margin:12px 0 18px 0;
+">
+  <div style="display:flex;align-items:flex-start;gap:10px;">
+    <div style="font-size:22px;line-height:1;">🎯</div>
+    <div>
+      <p style="margin:0 0 6px 0;font-weight:600;">Goal</p>
+      <p style="margin:0;">
+        Build an Ubuntu 22.04 Desktop workstation named
+        <code>eadl-linux-client</code>, give it a static IP on the lab NAT
+        network, point DNS to the domain controller, and join the domain
+        <code>corp.eadl-dc.com</code> using Samba/Winbind.
+      </p>
+    </div>
+  </div>
+</div>
+
 
 ## Prerequisites
 
