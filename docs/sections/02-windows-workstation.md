@@ -48,3 +48,13 @@ Then the VM will restart and lets choose the VM name
 ## 3) Set hostname and reboot
 
 - In Windows, rename the computer to eadl-win-client and reboot to apply. [file:55]  
+
+## 4) Configure network (static IP + DNS)
+
+- Set a static IPv4 address and DNS so AD lookups work reliably: IP 10.0.0.100, Mask 255.255.255.0, Gateway 10.0.0.1, Preferred DNS 10.0.0.5.
+
+<details>
+  <summary>Click to show screenshot</summary>
+
+  <img src="../assets/images/windowsworkstation/staticip.png" alt="VBox NIC on eadl-network" width="800">
+</details>
