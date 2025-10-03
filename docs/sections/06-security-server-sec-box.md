@@ -1,7 +1,9 @@
+[← Back to index](../index.md){: .btn .btn-blue }
 ---
-title: Security server (sec-box) prep
+title: Windows workstation (AD join)
 nav_order: 6
 ---
+
 
 <!DOCTYPE html>
 <html lang="en">
