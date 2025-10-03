@@ -1,28 +1,5 @@
 # Enterprise Attack Detection Lab (EADL)
 
-<!-- Quick value + badges -->
-<p style="margin:6px 0 10px 0;font-size:16px;">
-  Mini‑enterprise SOC lab with AD, Wazuh (XDR), and Security Onion — fully reproducible and evidence‑driven.
-</p>
-
-<p align="left" style="display:flex;gap:6px;flex-wrap:wrap;">
-  <img alt="AD" src="https://img.shields.io/badge/Active%20Directory-0078D4?style=flat&logo=microsoft&logoColor=white">
-  <img alt="Linux" src="https://img.shields.io/badge/Linux-111111?style=flat&logo=linux&logoColor=FCC624">
-  <img alt="Windows" src="https://img.shields.io/badge/Windows-00A4EF?style=flat&logo=windows&logoColor=white">
-  <img alt="Wazuh" src="https://img.shields.io/badge/Wazuh-0B5FFF?style=flat&logo=elasticstack&logoColor=white">
-  <img alt="Security Onion" src="https://img.shields.io/badge/Security%20Onion-6B7280?style=flat&logo=security%20onion&logoColor=white">
-  <img alt="VirtualBox" src="https://img.shields.io/badge/VirtualBox-183A61?style=flat&logo=virtualbox&logoColor=white">
-</p>
-
-<!-- Slim cover strip (optional visual) -->
-<div style="border:1px solid #e5e7eb;background:#f8fafc;padding:8px;border-radius:8px;margin:8px 0 14px 0;">
-  <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-    <img src="./assets/images/topology.png" alt="Lab topology" style="height:56px;border:1px solid #e5e7eb;border-radius:6px;">
-    <div style="font-size:14px;line-height:1.4;">
-      Build → Join → Observe → Detect: DC + Win/Linux clients, Wazuh agents, SO analysis. Screenshots and configs included.
-    </div>
-  </div>
-</div>
 
 
 <!-- Top author bar with LinkedIn/GitHub -->
