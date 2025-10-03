@@ -23,15 +23,12 @@ Lets go to Virtual Box Creating a new VM with Windows 11, same specs as before.
 <img src="../assets/images/windowsworkstation/createvm.png" alt="VBox NIC on eadl-network" width="800">
 
 
-![VM settings (NIC on eadl-network)](../assets/images/win/01-vbox-settings.png) [file:55]
-
-## 2) Install Windows 11
+## 2) Install Windows 11 + Host-Only
 
 - Mount the Windows 11 Enterprise ISO and perform a standard installation with default partitions. 
-
-
-![Windows 11 install (select image/edition)](../assets/images/win/02-win11-install.png) 
-![Disk partitions created automatically](../assets/images/win/03-win11-disk.png) 
+Then after the installation is completed, because its a lab i im adding any email to sign up
+to do so i configured just for now the network adpater in Host Only Adapter and then i run those command as shown in the image beloiw:
+ press shift f10 to open the cmd 
 
 ## 3) Set hostname and reboot
 
