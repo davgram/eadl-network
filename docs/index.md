@@ -1,14 +1,27 @@
 # Enterprise Attack Detection Lab (EADL)
 
-<div style="border:1px solid #e5e7eb;border-left:6px solid #2563eb;background:#f8fafc;padding:14px 16px;border-radius:8px;margin:12px 0 18px 0;">
-  <p style="margin:0;">
+<!-- Hero header -->
+<div style="border:1px solid #e5e7eb;background:linear-gradient(180deg,#f8fafc, #ffffff);padding:18px 18px;border-radius:12px;margin:10px 0 18px 0;">
+  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;justify-content:space-between;">
+    <div style="font-size:20px;font-weight:700;line-height:1.2;">Enterprise Attack Detection Lab</div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;">
+      <span style="border:1px solid #e5e7eb;background:#eff6ff;color:#1d4ed8;padding:4px 8px;border-radius:999px;font-size:12px;">Active Directory</span>
+      <span style="border:1px solid #e5e7eb;background:#ecfdf5;color:#065f46;padding:4px 8px;border-radius:999px;font-size:12px;">Linux</span>
+      <span style="border:1px solid #e5e7eb;background:#fff7ed;color:#9a3412;padding:4px 8px;border-radius:999px;font-size:12px;">Security Onion</span>
+      <span style="border:1px solid #e5e7eb;background:#fef2f2;color:#991b1b;padding:4px 8px;border-radius:999px;font-size:12px;">Wazuh</span>
+      <span style="border:1px solid #e5e7eb;background:#f5f3ff;color:#5b21b6;padding:4px 8px;border-radius:999px;font-size:12px;">SIEM</span>
+    </div>
+  </div>
+  <p style="margin:10px 0 0 0;">
     This project demonstrates enterprise‑style network design, Windows/Linux administration, and SOC workflows by building a small business network with Active Directory, a corporate server, Security Onion, and Wazuh for endpoint telemetry and detections. The goal is to document reproducible builds, clear evidence (screenshots, configs), and measurable outcomes recruiters can review quickly.
   </p>
 </div>
 
+<!-- Image tip -->
 <div style="border:1px solid #e5e7eb;background:#fffbea;border-left:6px solid #f59e0b;padding:12px 14px;border-radius:8px;margin:12px 0;">
   <p style="margin:0;">
-    Images: place PNG/JPG files in <code>docs/assets/images</code> and reference them with relative paths like <code>./assets/images/topology.png</code>. This works reliably on GitHub Pages. Do not start image paths with <code>/</code>.
+    Images: place PNG/JPG files in <code>docs/assets/images</code> and reference them with relative paths like
+    <code>./assets/images/topology.png</code>. This works reliably on GitHub Pages. Do not start image paths with <code>/</code>.
   </p>
 </div>
 
@@ -101,8 +114,7 @@
 - [10 — Users, mapping & snapshots](sections/10-users-and-snapshots.md)
 - [11 — Optional: Attacker & simulation](sections/11-attacker-simulation.md)
 
-<!-- Footer nav (optional) -->
-<div style="display:flex;justify-content:space-between;gap:12px;margin:18px 0;">
-  <a href="./index.md" class="btn btn-blue" style="text-decoration:none;border:1px solid #e5e7eb;padding:8px 12px;border-radius:6px;background:#eff6ff;">← Back to index</a>
-  <a href="./sections/01-ad-baseline.md" class="btn btn-green" style="text-decoration:none;border:1px solid #e5e7eb;padding:8px 12px;border-radius:6px;background:#ecfdf5;">Start: AD baseline →</a>
+<!-- Credits / Author -->
+<div style="border:1px solid #e5e7eb;border-left:6px solid #16a34a;background:#f0fdf4;padding:12px 14px;border-radius:8px;margin:18px 0;">
+  <p style="margin:0;"><strong>Created by:</strong> Davide Gramuglia — SOC analyst–oriented lab showcasing AD, Linux, SIEM, and detection workflows.</p>
 </div>
