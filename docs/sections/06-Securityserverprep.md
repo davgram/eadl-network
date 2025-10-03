@@ -1,10 +1,7 @@
 ---
-title: Linux workstation (AD join)
-nav_order: 3
+title: Security server (sec-box) prep
+nav_order: 6
 ---
-
-[← Back to index](../index.md){: .btn .btn-blue }
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,17 +10,30 @@ nav_order: 3
 <title>06 — Security server (sec-box) prep</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:#0f172a; line-height:1.55; }
-  .container { max-width: 920px; margin: 0 auto; padding: 16px; }
-  a.btn { display:inline-block; padding:8px 12px; border:1px solid #e5e7eb; border-radius:6px; text-decoration:none; background:#eff6ff; color:#1d4ed8; }
-  h1 { font-size: 28px; margin: 12px 0 8px; }
-  h2 { font-size: 20px; margin: 20px 0 10px; }
-  pre { background:#0b1021; color:#e5e7eb; padding:12px; border-radius:6px; overflow:auto; }
-  code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
-  .card { border:1px solid #e5e7eb; border-radius:8px; padding:14px; background:#fff; }
-  .img { max-width:100%; border:1px solid #e5e7eb; border-radius:6px; }
-  hr { border:0; border-top:1px solid #e5e7eb; margin:18px 0; }
-  ul { margin: 0 0 10px 18px; }
+  :root{
+    --border:#e5e7eb;
+    --ink:#0f172a;
+    --muted:#334155;
+    --bg:#ffffff;
+    --callout:#f0fdf4;
+    --callout-border:#16a34a;
+    --code-bg:#0b1021;
+    --code-fg:#e5e7eb;
+  }
+  html,body{margin:0;padding:0;background:#fff;color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55}
+  .container{max-width:980px;margin:0 auto;padding:18px}
+  a.btn{display:inline-block;text-decoration:none;border:1px solid var(--border);padding:8px 12px;border-radius:8px;background:#eff6ff;color:#1d4ed8}
+  h1{font-size:28px;margin:12px 0 6px}
+  h2{font-size:20px;margin:18px 0 8px}
+  p{margin:8px 0}
+  ul{margin:6px 0 12px 20px}
+  hr{border:0;border-top:1px solid var(--border);margin:18px 0}
+  .callout{border:1px solid var(--border);border-left:6px solid var(--callout-border);background:var(--callout);padding:12px 14px;border-radius:8px;margin:12px 0 18px 0}
+  pre{background:var(--code-bg);color:var(--code-fg);padding:12px;border-radius:6px;overflow:auto}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  .img{max-width:100%;border:1px solid var(--border);border-radius:6px}
+  .pair{display:flex;gap:10px;flex-wrap:wrap}
+  .pair img{max-width:49%;min-width:260px}
 </style>
 </head>
 <body>
@@ -33,9 +43,9 @@ nav_order: 3
 
 <h1>Security server (sec-box) prep</h1>
 
-<div class="card">
-  <p>This page clones the Linux workstation, renames it to <b>sec-box</b>, creates a local admin, sets a static IP, joins the AD domain, verifies Winbind, and snapshots the VM before installing Wazuh.</p>
-  <p>Screenshots path: <code>docs/assets/sec-boxprep</code>.</p>
+<div class="callout">
+  This page clones the Linux workstation, renames it to <code>sec-box</code>, creates a local admin, sets a static IP, joins the AD domain, verifies Winbind, and snapshots the VM before installing Wazuh.<br>
+  Screenshots path: <code>docs/assets/sec-boxprep</code>.
 </div>
 
 <hr>
@@ -89,8 +99,10 @@ whoami
 <p><img class="img" src="../assets/sec-boxprep/admingroup.png" alt="Member Of shows Domain Users"></p>
 
 <p>Optional: create an admin group and assign members.</p>
-<p><img class="img" src="../assets/sec-boxprep/admingroup2.png" alt="Create admin group"></p>
-<p><img class="img" src="../assets/sec-boxprep/domainuser.png" alt="Add Domain Users to group"></p>
+<div class="pair">
+  <img class="img" src="../assets/sec-boxprep/admingroup2.png" alt="Create admin group">
+  <img class="img" src="../assets/sec-boxprep/domainuser.png" alt="Add Domain Users to group">
+</div>
 
 <h2>6) Join sec-box to the domain</h2>
 <p>Ensure DNS points to the DC and time is in sync.</p>
