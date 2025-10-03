@@ -30,7 +30,11 @@ Then after the installation is completed, because its a lab i im adding any emai
 to do so i configured just for now the network adpater in Host Only Adapter and then i run those command as shown in the image beloiw:
  press shift f10 to open the cmd 
 
-<img src="../assets/images/windowsworkstation/skipemail.png" alt="VBox NIC on eadl-network" width="800">
+<details>
+  <summary>Click to show screenshot</summary>
+
+  <img src="../assets/images/windowsworkstation/skipemail.png" alt="VBox NIC on eadl-network" width="800">
+</details>
 
 Then the VM will restart and lets choose the VM name
 
