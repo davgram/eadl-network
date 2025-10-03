@@ -1,4 +1,61 @@
-# Enterprise Attack Detection Lab (EADL)
+<!-- EADL Hero Banner -->
+<div style="
+  margin: 6px 0 18px 0;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 18px rgba(2,6,23,.06);
+">
+  <!-- top gradient strip -->
+  <div style="
+    height: 8px;
+    background: linear-gradient(90deg,#0ea5e9,#22c55e,#a855f7);
+  "></div>
+
+  <!-- content row -->
+  <div style="
+    display: grid;
+    grid-template-columns: 10px 1fr;
+    gap: 0;
+    background: linear-gradient(180deg,#f8fafc 0%, #ffffff 100%);
+  ">
+    <!-- left color bar -->
+    <div style="background: linear-gradient(180deg,#0ea5e9,#22c55e);"></div>
+
+    <!-- text block -->
+    <div style="padding: 16px 18px 18px 16px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+        <h1 style="
+          margin: 0;
+          font-size: 28px;
+          line-height: 1.15;
+          letter-spacing: .2px;
+        ">
+          Enterprise Attack Detection Lab
+          <span style="opacity:.55;font-weight:600;">(EADL)</span>
+        </h1>
+
+        <!-- quick action buttons -->
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <a href="#sections" style="text-decoration:none;border:1px solid #e5e7eb;padding:7px 10px;border-radius:8px;background:#ecfdf5;color:#065f46;font-weight:600;">Explore sections</a>
+          <a href="./assets/images/topology.png" style="text-decoration:none;border:1px solid #e5e7eb;padding:7px 10px;border-radius:8px;background:#eff6ff;color:#1d4ed8;font-weight:600;">View topology</a>
+        </div>
+      </div>
+
+      <p style="margin:8px 0 0 0;color:#334155;">
+        Build a realistic mini‑enterprise: domain controller, Windows/Linux clients, Wazuh XDR, and Security Onion for network analysis—then attack, detect, and document with screenshots and configs recruiters can verify fast.
+      </p>
+
+      <!-- compact key facts row -->
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;">
+        <div style="border:1px solid #e5e7eb;background:#ffffff;padding:6px 10px;border-radius:999px;font-size:12px;">AD domain: <b>corp.eadl-dc.com</b></div>
+        <div style="border:1px solid #e5e7eb;background:#ffffff;padding:6px 10px;border-radius:999px;font-size:12px;">Hosts: <b>6</b></div>
+        <div style="border:1px solid #e5e7eb;background:#ffffff;padding:6px 10px;border-radius:999px;font-size:12px;">Detections: <b>attack & defend</b></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 
