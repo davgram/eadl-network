@@ -49,9 +49,26 @@ Then the VM will restart and lets choose the VM name
   <img src="../assets/images/windowsworkstation/namevm.png" alt="VBox NIC on eadl-network" width="800">
 </details>
 
-## 3) Set hostname and reboot
 
-- In Windows, rename the computer to eadl-win-client and reboot to apply. 
+
+
+## 3) Configure network (static IP + DNS)
+
+Let's change again the  network adapter to Nat Networ, eadl network. (Previously changed to Host-Name to bypass email sign in)
+
+
+ Set a static IPv4 address and DNS so AD lookups work reliably: IP 10.0.0.100, Mask 255.255.255.0, Gateway 10.0.0.1, Preferred DNS 10.0.0.5.
+
+<details>
+  <summary>Click to show screenshot</summary>
+
+  <img src="../assets/images/windowsworkstation/staticip.png" alt="VBox NIC on eadl-network" width="800">
+</details>
+
+## 4) Set hostname and reboot
+
+Then lets go to control panel and change the name of the workstation and domain path, so it refers to the domain controler
+Settings → System → About → Rename this PC → eadl-win-client
 
 <details>
   <summary>Click to show screenshot</summary>
@@ -59,13 +76,3 @@ Then the VM will restart and lets choose the VM name
   <img src="../assets/images/windowsworkstation/renameworkstation.png" alt="VBox NIC on eadl-network" width="800">
 </details>
 
-
-## 4) Configure network (static IP + DNS)
-
-- Set a static IPv4 address and DNS so AD lookups work reliably: IP 10.0.0.100, Mask 255.255.255.0, Gateway 10.0.0.1, Preferred DNS 10.0.0.5.
-
-<details>
-  <summary>Click to show screenshot</summary>
-
-  <img src="../assets/images/windowsworkstation/staticip.png" alt="VBox NIC on eadl-network" width="800">
-</details>
