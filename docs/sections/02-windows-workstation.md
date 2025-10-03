@@ -1,3 +1,4 @@
+[← Back to index](../index.md){: .btn .btn-blue }
 ---
 title: Windows workstation (AD join)
 nav_order: 2
