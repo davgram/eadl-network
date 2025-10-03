@@ -30,12 +30,11 @@ nav_order: 3
   </div>
 </div>
 
-
 ## Prerequisites
 
-- Active Directory baseline is online on `eadl-dc (10.0.0.5)` with DNS and a forwarder configured. [file:55]  
-- VirtualBox NAT Network `eadl-network (10.0.0.0/24, gateway 10.0.0.1)` exists and is used by all VMs. [file:55]  
-- Ubuntu 22.04.5 Desktop ISO downloaded to the host. 
+- Active Directory baseline is online on `eadl-dc (10.0.0.5)` with DNS and a forwarder configured.  
+- VirtualBox NAT Network `eadl-network (10.0.0.0/24, gateway 10.0.0.1)` exists and is used by all VMs.  
+- Ubuntu 22.04.5 Desktop ISO downloaded to the host.
 
 ## 1) Create the VM (VirtualBox)
 
@@ -43,35 +42,35 @@ nav_order: 3
 
 <details>
   <summary><strong>Click to show screenshot</strong></summary>
-  <img src="../assets/images/linuxworkstation/01-vbox-create.png" alt="Create Ubuntu VM on eadl-network" width="850">
+  <img src="../assets/images/linuxworkstation/01-vbox-create.png" alt="Create Ubuntu VM attached to eadl-network in VirtualBox" width="850" style="max-width:100%;border:1px solid #e5e7eb;border-radius:6px;">
 </details>
 
 ## 2) Install Ubuntu 22.04 Desktop
 
-- Proceed with the standard installer; sample unattended values used in notes: real name “Sam Wilson”, username `samw`, password `password123@` (weak on purpose for lab). [file:55]  
-- After first boot, set Power → Blank screen “Never” to avoid session drops during lab work. [file:55]
+- Proceed with the standard installer; sample unattended values used in notes: real name “Sam Wilson”, username `samw`, password `password123@` (weak on purpose for lab).  
+- After first boot, set Power → Blank screen “Never” to avoid session drops during lab work.
 
 <details>
   <summary><strong>Click to show screenshot</strong></summary>
-  <img src="../assets/images/linuxworkstation/02-install-ubuntu.png" alt="Ubuntu installer" width="850">
+  <img src="../assets/images/linuxworkstation/02-install-ubuntu.png" alt="Ubuntu Desktop 22.04 installer screen" width="850" style="max-width:100%;border:1px solid #e5e7eb;border-radius:6px;">
 </details>
 
 ## 3) Configure network (static IP + DNS)
 
-- Set static IPv4 and DNS so AD lookups are reliable: `IP 10.0.0.101`, `Mask 255.255.255.0`, `Gateway 10.0.0.1`, `DNS 10.0.0.5`. [file:55]
+- Set static IPv4 and DNS so AD lookups are reliable: `IP 10.0.0.101`, `Mask 255.255.255.0`, `Gateway 10.0.0.1`, `DNS 10.0.0.5`.
 
 <details>
   <summary><strong>Click to show screenshot</strong></summary>
-  <img src="../assets/images/linuxworkstation/03-ipv4-static.png" alt="IPv4 static 10.0.0.101 / DNS 10.0.0.5" width="850">
+  <img src="../assets/images/linuxworkstation/03-ipv4-static.png" alt="IPv4 10.0.0.101/24, gateway 10.0.0.1, DNS 10.0.0.5" width="850" style="max-width:100%;border:1px solid #e5e7eb;border-radius:6px;">
 </details>
 
 ## 4) Snapshot: baseline
 
-- Take a snapshot “Baseline conf” so the workstation can be restored before domain join or agent installs. [file:55]
+- Take a snapshot “Baseline conf” so the workstation can be restored before domain join or agent installs.
 
 <details>
   <summary><strong>Click to show screenshot</strong></summary>
-  <img src="../assets/images/linuxworkstation/04-snapshot-baseline.png" alt="Snapshot baseline" width="850">
+  <img src="../assets/images/linuxworkstation/04-snapshot-baseline.png" alt="VirtualBox snapshot: Baseline conf" width="850" style="max-width:100%;border:1px solid #e5e7eb;border-radius:6px;">
 </details>
 
 <section id="install-samba-winbind" style="border:1px solid #e5e7eb;border-radius:8px;padding:16px;background:#fff;">
@@ -110,7 +109,9 @@ nav_order: 3
       <p style="margin:6px 0;">That command installs the full AD join stack on Ubuntu—Samba + Winbind + Kerberos—so the Linux workstation can join <code>corp.eadl-dc.com</code> and let CORP users log in with domain credentials.</p>
     </div>
   </details>
-After issuing the command i was prompted with those following pages, lets configure Kerberos: Lets add <B>CORP.EADL-DC.COM</B>
+
+  <p style="margin:12px 0 6px;">After issuing the command i was prompted with those following pages, lets configure Kerberos: Lets add <b>CORP.EADL-DC.COM</b></p>
+
   <!-- Kerberos prompts screenshots -->
   <h4 style="margin:18px 0 8px;">Kerberos configuration prompts</h4>
   <div style="display:flex;gap:10px;flex-wrap:wrap;">
@@ -123,7 +124,7 @@ After issuing the command i was prompted with those following pages, lets config
 
   <!-- smb.conf -->
   <h3 style="margin:18px 0 8px;">Step 3 — Backup and edit Samba</h3>
-  smb.conf: tells Linux “join this AD domain and use these rules for users/groups.
+  <p style="margin:6px 0;">smb.conf: tells Linux “join this AD domain and use these rules for users/groups.”</p>
   <pre style="background:#0b1021;color:#e5e7eb;padding:12px;border-radius:6px;overflow:auto;"><code>sudo mv /etc/samba/smb.conf /etc/samba/smb.conf.org
 sudo nano /etc/samba/smb.conf</code></pre>
 
@@ -142,7 +143,7 @@ sudo nano /etc/samba/smb.conf</code></pre>
        idmap config * : backend = autorid</code></pre>
 
   <p style="margin:6px 0;">using nano to display and modify the file as follow</p>
-  <img src="../assets/images/linuxworkstation/smb.conf.png" alt="smb.conf after paste" style="max-width:100%;border:1px solid #eee;border-radius:6px;">
+  <img src="../assets/images/linuxworkstation/smb.conf.png" alt="smb.conf content after paste" style="max-width:100%;border:1px solid #eee;border-radius:6px;">
 
   <p style="margin:10px 0;">then save it using <kbd>ctrl</kbd> + <kbd>x</kbd> and then press <kbd>y</kbd></p>
 
@@ -150,19 +151,19 @@ sudo nano /etc/samba/smb.conf</code></pre>
   <h3 style="margin:18px 0 8px;">Step 4 — Configure NSS</h3>
   <pre style="background:#0b1021;color:#e5e7eb;padding:12px;border-radius:6px;overflow:auto;"><code>sudo nano /etc/nsswitch.conf</code></pre>
   <p style="margin:6px 0;">lets configure it like this</p>
-  <img src="../assets/images/linuxworkstation/nsswitch.conf.png" alt="nsswitch with winbind" style="max-width:100%;border:1px solid #eee;border-radius:6px;">
+  <img src="../assets/images/linuxworkstation/nsswitch.conf.png" alt="nsswitch.conf with winbind entries for passwd/group" style="max-width:100%;border:1px solid #eee;border-radius:6px;">
 
   <!-- PAM -->
   <p style="margin:12px 0 6px;">So on linux everytbody has interactive login, now lets install AD<br>lets do the command:</p>
   <pre style="background:#0b1021;color:#e5e7eb;padding:12px;border-radius:6px;overflow:auto;"><code>sudo pam-auth-update</code></pre>
   <p style="margin:6px 0;">and then lets go below with the arrow keyboard and select <em>create home directory on login</em> like in photo. Use the space button to select it and click ok</p>
-  <img src="../assets/images/linuxworkstation/config.png" alt="pam-auth-update create home" style="max-width:100%;border:1px solid #eee;border-radius:6px;">
+  <img src="../assets/images/linuxworkstation/config.png" alt="pam-auth-update: enable create home directory on login" style="max-width:100%;border:1px solid #eee;border-radius:6px;">
 
   <!-- resolv.conf -->
   <h3 style="margin:18px 0 8px;">Step 5 — Point DNS to the DC</h3>
   <pre style="background:#0b1021;color:#e5e7eb;padding:12px;border-radius:6px;overflow:auto;"><code>sudo nano /etc/resolv.conf</code></pre>
   <p style="margin:6px 0;">and then lets  add the domain controller ip</p>
-  <img src="../assets/images/linuxworkstation/resolvconf.png" alt="resolv.conf nameserver 10.0.0.5" style="max-width:100%;border:1px solid #eee;border-radius:6px;">
+  <img src="../assets/images/linuxworkstation/resolvconf.png" alt="resolv.conf set nameserver 10.0.0.5" style="max-width:100%;border:1px solid #eee;border-radius:6px;">
 
   <!-- restart/join -->
   <h3 style="margin:18px 0 8px;">Step 6 — Restart and join the domain</h3>
@@ -174,156 +175,25 @@ sudo net ads join -U Administrator</code></pre>
     <strong>WARNING</strong> The clock should be same, DC and workstation should have the same clock, or it doesnt sync as you can see in photo.
   </div>
 
-  <img src="../assets/images/linuxworkstation/sudoadsnet.png" alt="net ads join success" style="max-width:100%;border:1px solid #eee;border-radius:6px;">
+  <img src="../assets/images/linuxworkstation/sudoadsnet.png" alt="net ads join successful output" style="max-width:100%;border:1px solid #eee;border-radius:6px;">
 
   <!-- Verify -->
   <h3 style="margin:18px 0 8px;">Step 7 — Verify</h3>
   <p style="margin:6px 0;">Then later lets see the workstation created</p>
-  <img src="../assets/images/linuxworkstation/wbinfo.png" alt="wbinfo users list" style="max-width:100%;border:1px solid #eee;border-radius:6px;">
+  <img src="../assets/images/linuxworkstation/wbinfo.png" alt="wbinfo users list confirming domain visibility" style="max-width:100%;border:1px solid #eee;border-radius:6px;">
 
   <!-- First domain login -->
   <h3 style="margin:18px 0 8px;">Step 8 — First domain login</h3>
   <p style="margin:6px 0;">NOW L;ETS LOGIN AS SAM WILSON  (the course did two use Jane De And John Due i just did Sam Wilson just to make it different )</p>
-  <img src="../assets/images/linuxworkstation/sudologinsamw.png" alt="sudo login samw" style="max-width:100%;border:1px solid #eee;border-radius:6px;">
+  <img src="../assets/images/linuxworkstation/sudologinsamw.png" alt="login as CORP\\samw" style="max-width:100%;border:1px solid #eee;border-radius:6px;">
 
   <p style="margin:6px 0;">put password<br>as you can see im logged as SAMW</p>
-  <img src="../assets/images/linuxworkstation/directorycreated.png" alt="home /home/CORP/samw created" style="max-width:100%;border:1px solid #eee;border-radius:6px;">
+  <img src="../assets/images/linuxworkstation/directorycreated.png" alt="home directory /home/CORP/samw created" style="max-width:100%;border:1px solid #eee;border-radius:6px;">
 </section>
 
-
-
-after those 2 command i was prompted with several screens 
+after those 2 command i was prompted with several screens  
 kerberos configuration are three screenshot kerberos1 kerberos2 kerberos3
 
-after the installation is completed 
+after the installation is completed  
 i will use the command
 
-```jsx
-     sudo mv /etc/samba/smb.conf /etc/samba/smb.conf.org
-
-```
-
-then i will open the smb.conf file
-
-```jsx
-     sudo nano /etc/samba/smb.conf
-
-```
-
-THEN PASTE THOSE CODES INSIDE
-
-```jsx
-[global]
-       kerberos method = secrets and keytab
-       realm = PUT HERE DOMAIN CONTROLLER IN  MY CASE CORP.EADL-DC.com
-       workgroup = CORP
-       security = ads
-       template shell = /bin/bash
-       winbind enum groups = Yes
-       winbind enum users = Yes
-       winbind separator = +
-       idmap config * : rangesize = 1000000
-       idmap config * : range = 1000000-19999999
-       idmap config * : backend = autorid
-```
-
-<details>
-  <summary><strong>Click to show screenshot</strong></summary>
-  <img src="../assets/images/linuxworkstation/smb.config.png" alt="Snapshot baseline" width="850">
-</details>
-
-then save it using ctrl x and then  press y
-then lets use the command
-
-
-     sudo nano /etc/nsswitch.conf
-
-
-lets configure it like this 
-
-
-<details>
-  <summary><strong>Click to show screenshot</strong></summary>
-  <img src="../assets/images/linuxworkstation/nsswitch.conf.png" alt="Snapshot baseline" width="850">
-</details>
-
-So on linux everytbody has interactive login, now lets install AD
-
-lets do the command:      sudo pam-auth-update
-
-and then lets go below with the arrow keyboard and select 
-
-create home directory on login like in photo Use the space button to select it and click ok
-
-<details>
-  <summary><strong>Click to show screenshot</strong></summary>
-  <img src="../assets/images/linuxworkstation/config.png" alt="Snapshot baseline" width="850">
-</details>
-
-then lets use the command
-
-
-      sudo nano /etc/resolv.conf
-
-
-
-and then lets  add the domain controller ip
-
-and then lets use the command to restart winbind
-
-```jsx
-      **systemctl restart winbind**
-
-```
-
-and then lets login
-
-```jsx
-      sudo net ads join -U Administrator
-
-```
-
-WARNING The clock should be same, DC and workstation should have the same clock, or it doesnt sync as you can see in photo
-
-
-THEN sudo net ads join -U Administrator SCREENSHOT sudoadsnet.png
-
-<details>
-  <summary><strong>Click to show screenshot</strong></summary>
-  <img src="../assets/images/linuxworkstation/sudoadsnet.png" alt="Snapshot baseline" width="850">
-</details>
-
-
-Then later lets see the workstation created
-wbinfo -u screenshot wbinfo.png
-
-<details>
-  <summary><strong>Click to show screenshot</strong></summary>
-  <img src="../assets/images/linuxworkstation/wbinfo.png" alt="Snapshot baseline" width="850">
-</details>
-
-
-
-
-NOW L;ETS LOGIN AS SAM WILSON  (the course did two use Jane De And John Due i just did Sam Wilson just to make it different ) 
-
-sudo login screnshoot sudologinsamw.png
-
-
-<details>
-  <summary><strong>Click to show screenshot</strong></summary>
-  <img src="../assets/images/linuxworkstation/sudologinsamw.png" alt="Snapshot baseline" width="850">
-</details>
-
-
-
-
-
-put password
-as you can see im logged as SAMW SCREENSHOT directorycreated.png
-
-
-<details>
-  <summary><strong>Click to show screenshot</strong></summary>
-  <img src="../assets/images/linuxworkstation/directorycreated.png" alt="Snapshot baseline" width="850">
-</details>
