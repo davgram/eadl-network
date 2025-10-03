@@ -1,3 +1,11 @@
+---
+title: Linux workstation (AD join)
+nav_order: 3
+---
+
+[← Back to index](../index.md){: .btn .btn-blue }
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
