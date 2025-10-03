@@ -1,5 +1,16 @@
 # Enterprise Attack Detection Lab (EADL)
 
+<!-- Top author bar with LinkedIn -->
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;border:1px solid #e5e7eb;background:#f8fafc;padding:10px 12px;border-radius:10px;margin:6px 0 14px 0;">
+  <div style="font-weight:600;">
+    Created by: Davide Gramuglia — SOC analyst–oriented lab showcasing AD, Linux, SIEM, and detection workflows.
+  </div>
+  <a href="YOUR-LINKEDIN-URL" target="_blank" rel="noopener noreferrer" title="LinkedIn profile" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;border:1px solid #e5e7eb;padding:6px 10px;border-radius:999px;background:#ffffff;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="18" height="18" aria-hidden="true"><path fill="#0a66c2" d="M100.28 448H7.4V148.9h92.88zm-46.44-340C24.86 108 0 83 0 52.9A52.9 52.9 0 0 1 53.84 0c29.5 0 53.84 24 53.84 52.9S83.33 108 53.84 108zM447.9 448h-92.4V302.4c0-34.7-.7-79.3-48.3-79.3-48.3 0-55.7 37.7-55.7 76.6V448h-92.4V148.9h88.7v40.8h1.3c12.3-23.4 42.4-48.3 87.3-48.3 93.5 0 110.7 61.5 110.7 141.4z"/></svg>
+    <span style="font-weight:600;color:#0a66c2;">LinkedIn</span>
+  </a>
+</div>
+
 <!-- Hero header -->
 <div style="border:1px solid #e5e7eb;background:linear-gradient(180deg,#f8fafc, #ffffff);padding:18px 18px;border-radius:12px;margin:10px 0 18px 0;">
   <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;justify-content:space-between;">
@@ -113,8 +124,3 @@
 - [09 — Wazuh groups & agent.conf](sections/09-wazuh-groups-agentconf.md)
 - [10 — Users, mapping & snapshots](sections/10-users-and-snapshots.md)
 - [11 — Optional: Attacker & simulation](sections/11-attacker-simulation.md)
-
-<!-- Credits / Author -->
-<div style="border:1px solid #e5e7eb;border-left:6px solid #16a34a;background:#f0fdf4;padding:12px 14px;border-radius:8px;margin:18px 0;">
-  <p style="margin:0;"><strong>Created by:</strong> Davide Gramuglia — SOC analyst–oriented lab showcasing AD, Linux, SIEM, and detection workflows.</p>
-</div>
