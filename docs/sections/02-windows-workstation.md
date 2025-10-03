@@ -25,7 +25,8 @@ Lets go to Virtual Box Creating a new VM with Windows 11, same specs as before.
 
 ## 2) Install Windows 11 + Host-Only
 
-- Mount the Windows 11 Enterprise ISO and perform a standard installation with default partitions. 
+ Mount the Windows 11 Enterprise ISO and perform a standard installation with default partitions. 
+ 
 Then after the installation is completed, because its a lab i im adding any email to sign up
 to do so i configured just for now the network adpater in Host Only Adapter and then i run those command as shown in the image beloiw:
  press shift f10 to open the cmd 
