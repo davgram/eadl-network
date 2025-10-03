@@ -59,7 +59,9 @@ Winbind lets the Linux workstation log in with AD users and map their groups cor
 
 First i did sudo apt update to refresh the list of all the repositories so the system always know the last version.
 then 
-     sudo apt -y install winbind libpam-winbind libnss-winbind krb5-config samba-dsdb-modules samba-vfs-modules
+     ```html
+<pre><code>sudo apt -y install winbind libpam-winbind libnss-winbind krb5-config samba-dsdb-modules samba-vfs-modules</code></pre>
+```
 
 winbind: AD client that talks to domain controllers and maps AD users/groups to Linux IDs.
 
