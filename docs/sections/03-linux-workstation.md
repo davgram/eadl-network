@@ -191,9 +191,13 @@ sudo net ads join -U Administrator</code></pre>
   <img src="../assets/images/linuxworkstation/directorycreated.png" alt="home directory /home/CORP/samw created" style="max-width:100%;border:1px solid #eee;border-radius:6px;">
 </section>
 
-after those 2 command i was prompted with several screens  
-kerberos configuration are three screenshot kerberos1 kerberos2 kerberos3
+then after 
 
-after the installation is completed  
-i will use the command
+ <!-- First domain login -->
+  <h3 style="margin:18px 0 8px;">Step 9 — Check on Domain Controller</h3>
+  <p style="margin:6px 0;">Now lets check on domain controller if Linux Workstation is inside theDC</p>
+  <img src="../assets/images/linuxworkstation/dc.png" alt="login as CORP\\samw" style="max-width:100%;border:1px solid #eee;border-radius:6px;">
 
+  <p style="margin:6px 0;">put password<br>as you can see its inside</p>
+  
+</section>
