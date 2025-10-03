@@ -76,3 +76,13 @@ Settings → System → About → Rename this PC → eadl-win-client
   <img src="../assets/images/windowsworkstation/renameworkstation.png" alt="VBox NIC on eadl-network" width="800">
 </details>
 
+## 4) First domain logon and checks
+
+Sign in with a domain user created in the AD baseline to confirm Kerberos/SSO and profile creation
+
+<details>
+  <summary>Click to show screenshot</summary>
+
+  <img src="../assets/images/windowsworkstation/logonsamw.png" alt="VBox NIC on eadl-network" width="800">
+</details>
+
