@@ -51,7 +51,14 @@ Then the VM will restart and lets choose the VM name
 
 ## 3) Set hostname and reboot
 
-- In Windows, rename the computer to eadl-win-client and reboot to apply. [file:55]  
+- In Windows, rename the computer to eadl-win-client and reboot to apply. 
+
+<details>
+  <summary>Click to show screenshot</summary>
+
+  <img src="../assets/images/windowsworkstation/renameworkstation.png" alt="VBox NIC on eadl-network" width="800">
+</details>
+
 
 ## 4) Configure network (static IP + DNS)
 
