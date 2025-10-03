@@ -128,16 +128,14 @@ Security note: Weak passwords are intentional for simulation; never reuse outsid
 
 ## 9) Baseline snapshot
 
-- VirtualBox → Machine → Take Snapshot → “Baseline conf.” Reason: quick rollback before joining clients or installing services. [file:55]  
+- VirtualBox → Machine → Take Snapshot → “Baseline conf.” Reason: quick rollback before joining clients or installing services. 
 
-Add screenshot: ./assets/images/ad/snapshot.png (snapshot dialog).
 
-MINE:
 
 ## Verification checklist
 
-- Server is a domain controller for corp.eadl-dc.com; AD DS and DNS installed, DNS forwarder 8.8.8.8 set. [file:55]  
-- Static IP 10.0.0.5 configured; ping/nslookup succeed; DHCP scope authorized (if using DHCP). [file:55]  
-- Initial users created; baseline snapshot taken successfully. [file:55]
+- Server is a domain controller for corp.eadl-dc.com; AD DS and DNS installed, DNS forwarder 8.8.8.8 set.  
+- Static IP 10.0.0.5 configured; ping/nslookup succeed; DHCP scope authorized (if using DHCP). 
+- Initial users created; baseline snapshot taken successfully. 
 
-MINE:
+
