@@ -76,7 +76,7 @@ Add screenshots with filenames matching the references above into docs/assets/im
 ## Sections
 
 - [01 — Active Directory baseline](sections/01-ad-baseline.md)
-- [02 — Windows workstation (AD join)](sections/02-windows-workstation.md)
+- [02 — Windows workstation (AD join)](sections/02-windows-workstation.html)
 - [03 — Linux workstation (AD join)](sections/03-linux-workstation.md)
 - [04 — Corporate server & MailHog](sections/04-corporate-server-mailhog.md)
 - [05 — Security Onion desktop](sections/05-security-onion-desktop.md)
