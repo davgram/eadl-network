@@ -81,20 +81,19 @@ Tip: If the VM hangs, perform a safe reboot and log back in to the domain. [file
 
 MINE:
 
-## 6) Configure DNS forwarders
+### 6) Configure DNS forwarders
 
-<img src="../assets/images/ad/dnsmanager1.png" alt="VBox NIC on eadl-network" width="800">
+Why: The DC is the lab’s DNS for corp.eadl-dc.com; a forwarder lets it ask a public resolver for Internet names it doesn’t host so all clients can keep using only the DC. 
 
-<img src="../assets/images/ad/dnsmanager2.png" alt="VBox NIC on eadl-network" width="800">
+1) Open DNS Manager on eadl‑dc.
+![Open DNS Manager](../assets/images/ad/dnsmanager1.png)
 
-- Tools → DNS → Right‑click server → Properties → Forwarders → Edit → add 8.8.8.8. Purpose: forward unknown names externally. [file:55]  
-- Validate with powershell: ping google.it and nslookup corp.eadl-dc.com should answer 10.0.0.5. [file:55]  
+2) Add the forwarder:
+DNS Manager → <server> → Properties → Forwarders → Edit → add 8.8.8.8 → OK.
+![Add 8.8.8.8 forwarder](../assets/images/ad/dnsmanager2.png)
 
-Add screenshots:  
-- ./assets/images/ad/07-dns-forwarder.png (8.8.8.8 set) [file:55]  
-- ./assets/images/ad/08-nslookup.png (name resolves to 10.0.0.5) [file:55]
+3) Quick test on eadl‑dc:
 
-MINE:
 
 ## 7) Optional: DHCP scope
 
