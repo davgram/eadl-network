@@ -1,8 +1,16 @@
 # Enterprise Attack Detection Lab (EADL)
 
-This project demonstrates enterprise‑style network design, Windows/Linux administration, and SOC workflows by building a small business network with Active Directory, a corporate server, Security Onion, and Wazuh for endpoint telemetry and detections. The goal is to document reproducible builds, clear evidence (screenshots, configs), and measurable outcomes recruiters can review quickly.
+<div style="border:1px solid #e5e7eb;border-left:6px solid #2563eb;background:#f8fafc;padding:14px 16px;border-radius:8px;margin:12px 0 18px 0;">
+  <p style="margin:0;">
+    This project demonstrates enterprise‑style network design, Windows/Linux administration, and SOC workflows by building a small business network with Active Directory, a corporate server, Security Onion, and Wazuh for endpoint telemetry and detections. The goal is to document reproducible builds, clear evidence (screenshots, configs), and measurable outcomes recruiters can review quickly.
+  </p>
+</div>
 
-> Images: place PNG/JPG files in docs/assets/images and reference them with relative paths like `./assets/images/topology.png`. This works reliably on GitHub Pages. Do not start image paths with `/`. 
+<div style="border:1px solid #e5e7eb;background:#fffbea;border-left:6px solid #f59e0b;padding:12px 14px;border-radius:8px;margin:12px 0;">
+  <p style="margin:0;">
+    Images: place PNG/JPG files in <code>docs/assets/images</code> and reference them with relative paths like <code>./assets/images/topology.png</code>. This works reliably on GitHub Pages. Do not start image paths with <code>/</code>.
+  </p>
+</div>
 
 ## About this project
 
@@ -12,9 +20,13 @@ This project demonstrates enterprise‑style network design, Windows/Linux admin
 
 ### Topology
 
-![Enterprise topology](./assets/images/topology.png)
+<p align="center">
+  <img src="./assets/images/topology.png" alt="EADL enterprise topology diagram" style="max-width:100%;border:1px solid #e5e7eb;border-radius:6px;">
+</p>
 
-Add a simple diagram (draw.io/diagrams.net or screenshots) that shows the NAT network, DC, clients, Wazuh, Security Onion, and the corporate server. Save as docs/assets/images/topology.png.
+<p style="margin:8px 0 0 0;">
+  Add a simple diagram (draw.io/diagrams.net or screenshots) that shows the NAT network, DC, clients, Wazuh, Security Onion, and the corporate server. Save as <code>docs/assets/images/topology.png</code>.
+</p>
 
 ### Configuration summary
 
@@ -63,13 +75,15 @@ Add a simple diagram (draw.io/diagrams.net or screenshots) that shows the NAT ne
 
 ### Evidence gallery
 
-- Domain join (Windows): ![Windows join](./assets/images/win-join.png)  
-- Domain join (Linux): ![Linux join](./assets/images/linux-join.png)  
-- Wazuh manager dashboard: ![Wazuh UI](./assets/images/wazuh-ui.png)  
-- Security Onion desktop: ![SO desktop](./assets/images/so-desktop.png)  
-- MailHog UI: ![MailHog](./assets/images/mailhog-ui.png)
+- Domain join (Windows): <img src="./assets/images/win-join.png" alt="Windows domain join success" style="max-width:100%;border:1px solid #e5e7eb;border-radius:6px;">  
+- Domain join (Linux): <img src="./assets/images/linux-join.png" alt="Linux domain join success via Winbind" style="max-width:100%;border:1px solid #e5e7eb;border-radius:6px;">  
+- Wazuh manager dashboard: <img src="./assets/images/wazuh-ui.png" alt="Wazuh dashboard" style="max-width:100%;border:1px solid #e5e7eb;border-radius:6px;">  
+- Security Onion desktop: <img src="./assets/images/so-desktop.png" alt="Security Onion desktop" style="max-width:100%;border:1px solid #e5e7eb;border-radius:6px;">  
+- MailHog UI: <img src="./assets/images/mailhog-ui.png" alt="MailHog web UI" style="max-width:100%;border:1px solid #e5e7eb;border-radius:6px;">
 
-Add screenshots with filenames matching the references above into docs/assets/images. Use short, clear captions in the surrounding text.
+<p style="margin:8px 0 0 0;">
+  Add screenshots with filenames matching the references above into <code>docs/assets/images</code>. Use short, clear captions in the surrounding text.
+</p>
 
 ---
 
@@ -87,3 +101,8 @@ Add screenshots with filenames matching the references above into docs/assets/im
 - [10 — Users, mapping & snapshots](sections/10-users-and-snapshots.md)
 - [11 — Optional: Attacker & simulation](sections/11-attacker-simulation.md)
 
+<!-- Footer nav (optional) -->
+<div style="display:flex;justify-content:space-between;gap:12px;margin:18px 0;">
+  <a href="./index.md" class="btn btn-blue" style="text-decoration:none;border:1px solid #e5e7eb;padding:8px 12px;border-radius:6px;background:#eff6ff;">← Back to index</a>
+  <a href="./sections/01-ad-baseline.md" class="btn btn-green" style="text-decoration:none;border:1px solid #e5e7eb;padding:8px 12px;border-radius:6px;background:#ecfdf5;">Start: AD baseline →</a>
+</div>
