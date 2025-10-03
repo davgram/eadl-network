@@ -108,19 +108,29 @@ MINE:
 
 ## 8) Create initial identities
 
-- Tools → Active Directory Users and Computers → Users → New → User. Create “Sam Wilson” and “Chris Lee” with temporary lab password “password123@” and uncheck “User must change password at next logon” for lab workflows. [file:55]  
+Then we will create some user accounts to map to their workstations. We will create Identity and map them with corresponding Workstations, every user will have multiple workstations for example for example the developer need both linux and windows system
+To do so:
 
-Add screenshot: ./assets/images/ad/11-users-created.png (both users present). [file:55]
+- Tools → Active Directory Users and Computers → Users → New → User.
+<img src="../assets/images/ad/createuser1.png" alt="VBox NIC on eadl-network" width="800">
 
-Security note: Weak passwords are intentional for simulation; never reuse outside the lab. [file:55]
 
-MINE:
+
+ Create “Sam Wilson” and “Chris Lee” with temporary lab password “password123@” and uncheck “User must change password at next logon” for lab workflows. 
+
+ <img src="../assets/images/ad/createuser2.png" alt="VBox NIC on eadl-network" width="800">
+
+
+
+Security note: Weak passwords are intentional for simulation; never reuse outside the lab. 
+
+
 
 ## 9) Baseline snapshot
 
 - VirtualBox → Machine → Take Snapshot → “Baseline conf.” Reason: quick rollback before joining clients or installing services. [file:55]  
 
-Add screenshot: ./assets/images/ad/12-snapshot-baseline.png (snapshot dialog). [file:55]
+Add screenshot: ./assets/images/ad/snapshot.png (snapshot dialog).
 
 MINE:
 
