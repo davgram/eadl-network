@@ -84,4 +84,4 @@ Set a static IPv4 address and DNS so AD lookups work reliably: `IP 10.0.0.100`, 
 
 The Windows Worstation ended. Next section
 
-[Next: Linux workstation →](./03-linux-client-ad-join.md){: .btn .btn-green }
+[Next: Linux workstation →](./docs/sections/03-windows-workstation.html){: .btn .btn-green }
