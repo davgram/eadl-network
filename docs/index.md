@@ -27,12 +27,8 @@
   .brand span{background:linear-gradient(90deg,#38bdf8,#22c55e,#a78bfa);-webkit-background-clip:text;background-clip:text;color:transparent}
   .nav{padding:12px}
   .nav strong{display:block;margin:0 6px 8px 6px}
-  .nav button{
-    display:block;width:100%;text-align:left;cursor:pointer;
-    margin:8px 6px;padding:8px 10px;border:1px solid #e5e7eb;border-radius:8px;background:#fff;color:#0f172a;
-    font:inherit;
-  }
-  .nav button:hover{background:#f1f5f9}
+  .nav a{display:block;margin:8px 6px;padding:8px 10px;border:1px solid #e5e7eb;border-radius:8px;background:#fff;color:#0f172a}
+  .nav a:hover{background:#f1f5f9}
 
   /* Content blocks */
   .hero{border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;margin:8px 0 18px;box-shadow:0 3px 16px rgba(2,6,23,.06)}
@@ -40,48 +36,48 @@
   .hero-body{padding:16px}
   .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
   .chip{border:1px solid #e5e7eb;background:#fff;padding:6px 10px;border-radius:999px;font-size:12px}
-  .card{border:1px solid #e5e7eb;border-radius:10px;padding:14px;margin:10px 0 16px;background:#fff}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+  .card{border:1px solid #e5e7eb;border-radius:12px;background:#fff;padding:14px}
+  .card h3{margin:0 0 6px}
+  .card p{margin:0;color:#475569}
+  .card .more{display:inline-block;margin-top:10px}
+
   table{border-collapse:collapse;width:100%;font-size:14px}
   th,td{padding:8px 6px;border-bottom:1px solid #eaeef3;text-align:left}
-
-  /* Anchor targets: ensure they are focusable and offset-safe */
-  section{scroll-margin-top:14px}
-  section[tabindex="-1"]{outline:0}
 </style>
 </head>
 <body>
 
 <div class="wrap">
-  <!-- Left navbar (buttons to avoid <a> sanitization) -->
+  <!-- Left navbar linking to actual pages -->
   <aside class="side">
     <div class="brand"><span>EADL</span> Navigation</div>
-    <nav class="nav" id="left-nav">
+    <nav class="nav">
       <strong>Overview</strong>
-      <button type="button" data-target="intro">Intro</button>
-      <button type="button" data-target="topology">Topology</button>
-      <button type="button" data-target="config">Configuration</button>
-      <button type="button" data-target="evidence">Evidence</button>
+      <a href="./index.html">Home</a>
+      <a href="./assets/images/topology.png">Topology image</a>
+      <a href="./README.md">Project README</a>
       <hr style="border:none;border-top:1px solid #e5e7eb;margin:10px 6px">
 
       <strong>Sections</strong>
-      <button type="button" data-target="s01">01 — AD baseline</button>
-      <button type="button" data-target="s02">02 — Windows workstation</button>
-      <button type="button" data-target="s03">03 — Linux workstation</button>
-      <button type="button" data-target="s04">04 — Corp server &amp; MailHog</button>
-      <button type="button" data-target="s05">05 — Security Onion desktop</button>
-      <button type="button" data-target="s06">06 — Security server (sec‑box)</button>
-      <button type="button" data-target="s07">07 — Wazuh manager</button>
-      <button type="button" data-target="s08">08 — Enroll agents</button>
-      <button type="button" data-target="s09">09 — Groups &amp; agent.conf</button>
-      <button type="button" data-target="s10">10 — Users &amp; snapshots</button>
-      <button type="button" data-target="s11">11 — Attacker &amp; simulation</button>
+      <a href="sections/01-ad-baseline.md">01 — AD baseline</a>
+      <a href="sections/02-windows-workstation.html">02 — Windows workstation</a>
+      <a href="sections/03-linux-workstation.md">03 — Linux workstation</a>
+      <a href="sections/04-corporate-server-mailhog.md">04 — Corp server &amp; MailHog</a>
+      <a href="sections/05-security-onion-desktop.md">05 — Security Onion desktop</a>
+      <a href="sections/06-security-server-sec-box.md">06 — Security server (sec‑box)</a>
+      <a href="sections/07-wazuh-manager-install.md">07 — Wazuh manager install</a>
+      <a href="sections/08-wazuh-agents-enroll.md">08 — Enroll Wazuh agents</a>
+      <a href="sections/09-wazuh-groups-agentconf.md">09 — Wazuh groups &amp; agent.conf</a>
+      <a href="sections/10-users-and-snapshots.md">10 — Users &amp; snapshots</a>
+      <a href="sections/11-attacker-simulation.md">11 — Attacker &amp; simulation</a>
     </nav>
   </aside>
 
-  <!-- Content -->
-  <main class="main" id="content">
-    <!-- Intro -->
-    <section id="intro" tabindex="-1" class="hero">
+  <!-- Main content with cards for each section -->
+  <main class="main">
+    <div class="hero">
       <div class="strip"></div>
       <div class="hero-body">
         <h1 style="margin:0 0 6px">Enterprise Attack Detection Lab <span style="opacity:.55;font-weight:600">(EADL)</span></h1>
@@ -94,126 +90,85 @@
           <div class="chip">Detections: <b>attack &amp; defend</b></div>
         </div>
       </div>
+    </div>
+
+    <section class="card">
+      <h2 style="margin:0 0 8px">Configuration summary</h2>
+      <table>
+        <thead><tr><th>Hostname</th><th>IP Address</th><th>Function</th></tr></thead>
+        <tbody>
+          <tr><td>eadl-dc</td><td>10.0.0.5</td><td>Domain Controller (AD DS, DNS, DHCP)</td></tr>
+          <tr><td>eadl-win-client</td><td>10.0.0.100</td><td>Windows Workstation (domain‑joined)</td></tr>
+          <tr><td>eadl-linux-client</td><td>10.0.0.101</td><td>Linux Desktop (AD‑joined via Winbind)</td></tr>
+          <tr><td>eadl-corp-svr</td><td>10.0.0.8</td><td>Corporate Server (MailHog)</td></tr>
+          <tr><td>sec-box</td><td>10.0.0.10</td><td>Wazuh Manager (SIEM)</td></tr>
+          <tr><td>eadl-sec-work</td><td>10.0.0.103</td><td>Security Onion desktop (NSM/analysis)</td></tr>
+        </tbody>
+      </table>
     </section>
 
-    <!-- Topology -->
-    <section id="topology" tabindex="-1" class="card">
-      <h2 style="margin:0 0 8px">Topology</h2>
-      <p align="center" style="margin:8px 0">
-        <img src="./assets/images/topology.png" alt="EADL topology" style="max-width:100%;border:1px solid #e5e7eb;border-radius:6px">
-      </p>
-      <p style="margin:6px 0 0">NAT network with DC, Windows/Linux clients, Wazuh manager, Security Onion, and a corporate server.</p>
-    </section>
-
-    <!-- Configuration -->
-    <section id="config" tabindex="-1">
+    <h2 style="margin:14px 0 10px">Sections</h2>
+    <div class="grid">
       <div class="card">
-        <h2 style="margin:0 0 8px">Configuration summary</h2>
-        <h3 style="margin:10px 0 6px">Hosts</h3>
-        <table>
-          <thead><tr><th>Hostname</th><th>IP Address</th><th>Function</th></tr></thead>
-          <tbody>
-            <tr><td>eadl-dc</td><td>10.0.0.5</td><td>Domain Controller (AD DS, DNS, DHCP)</td></tr>
-            <tr><td>eadl-win-client</td><td>10.0.0.100</td><td>Windows Workstation (domain‑joined)</td></tr>
-            <tr><td>eadl-linux-client</td><td>10.0.0.101</td><td>Linux Desktop (AD‑joined via Winbind)</td></tr>
-            <tr><td>eadl-corp-svr</td><td>10.0.0.8</td><td>Corporate Server (MailHog)</td></tr>
-            <tr><td>sec-box</td><td>10.0.0.10</td><td>Wazuh Manager (SIEM)</td></tr>
-            <tr><td>eadl-sec-work</td><td>10.0.0.103</td><td>Security Onion desktop (NSM/analysis)</td></tr>
-          </tbody>
-        </table>
+        <h3>01 — Active Directory baseline</h3>
+        <p>Install Windows Server, configure AD DS/DNS/DHCP, and prepare the lab domain.</p>
+        <a class="more" href="sections/01-ad-baseline.md">Open section →</a>
       </div>
-
       <div class="card">
-        <h3 style="margin:0 0 6px">VM specs</h3>
-        <table>
-          <thead><tr><th>VM Name</th><th>Operating System</th><th>Specs</th><th>Storage (min)</th></tr></thead>
-          <tbody>
-            <tr><td>eadl-dc</td><td>Windows Server 2025</td><td>2 CPU / 4096 MB</td><td>50 GB</td></tr>
-            <tr><td>eadl-win-client</td><td>Windows 11 Enterprise</td><td>2 CPU / 4096 MB</td><td>80 GB</td></tr>
-            <tr><td>eadl-linux-client</td><td>Ubuntu 22.04 Desktop</td><td>1 CPU / 2048 MB</td><td>80 GB</td></tr>
-            <tr><td>eadl-sec-work</td><td>Security Onion 2.4.x</td><td>1 CPU / 2048 MB</td><td>55 GB</td></tr>
-            <tr><td>sec-box</td><td>Ubuntu 22.04 Desktop</td><td>2 CPU / 4096 MB</td><td>80 GB</td></tr>
-            <tr><td>eadl-corp-svr</td><td>Ubuntu 22.04 Server</td><td>1 CPU / 2048 MB</td><td>25 GB</td></tr>
-          </tbody>
-        </table>
+        <h3>02 — Windows workstation</h3>
+        <p>Join Windows 11 to the domain and verify GPO, DNS, and logon.</p>
+        <a class="more" href="sections/02-windows-workstation.html">Open section →</a>
       </div>
-
       <div class="card">
-        <h3 style="margin:0 0 6px">Core network</h3>
-        <table>
-          <thead><tr><th>Setting</th><th>Value</th></tr></thead>
-          <tbody>
-            <tr><td>VirtualBox NAT network name</td><td>eadl-network</td></tr>
-            <tr><td>Subnet / Gateway</td><td>10.0.0.0/24, gw 10.0.0.1</td></tr>
-            <tr><td>AD Domain</td><td>corp.eadl-dc.com</td></tr>
-            <tr><td>DC DNS forwarder</td><td>8.8.8.8</td></tr>
-            <tr><td>DHCP scope (lab)</td><td>10.0.0.100–10.0.0.200</td></tr>
-          </tbody>
-        </table>
+        <h3>03 — Linux workstation</h3>
+        <p>Join Ubuntu via Winbind + Kerberos; test domain logins and id mapping.</p>
+        <a class="more" href="sections/03-linux-workstation.md">Open section →</a>
       </div>
-
       <div class="card">
-        <h3 style="margin:0 0 6px">Accounts (public‑safe placeholders)</h3>
-        <table>
-          <thead><tr><th>Account</th><th>Password</th><th>Host</th></tr></thead>
-          <tbody>
-            <tr><td>Domain Administrator</td><td>[REDACTED]</td><td>eadl-dc</td></tr>
-            <tr><td>Windows client user (domain)</td><td>[REDACTED]</td><td>eadl-win-client</td></tr>
-            <tr><td>Linux client user (domain)</td><td>[REDACTED]</td><td>eadl-linux-client</td></tr>
-            <tr><td>Corp server admin</td><td>[REDACTED]</td><td>eadl-corp-svr</td></tr>
-            <tr><td>Wazuh admin</td><td>[REDACTED]</td><td>sec-box</td></tr>
-            <tr><td>Security Onion workstation</td><td>[REDACTED]</td><td>eadl-sec-work</td></tr>
-          </tbody>
-        </table>
+        <h3>04 — Corporate server &amp; MailHog</h3>
+        <p>Deploy lab mail stack for phishing and alerting exercises.</p>
+        <a class="more" href="sections/04-corporate-server-mailhog.md">Open section →</a>
       </div>
-    </section>
+      <div class="card">
+        <h3>05 — Security Onion desktop</h3>
+        <p>Use analyst workstation to explore Zeek/Suricata logs and detections.</p>
+        <a class="more" href="sections/05-security-onion-desktop.md">Open section →</a>
+      </div>
+      <div class="card">
+        <h3>06 — Security server (sec‑box) prep</h3>
+        <p>Harden Ubuntu base, expand disk, and prepare for Wazuh.</p>
+        <a class="more" href="sections/06-security-server-sec-box.md">Open section →</a>
+      </div>
+      <div class="card">
+        <h3>07 — Wazuh manager install</h3>
+        <p>Install Wazuh, configure indexer and dashboard, validate health.</p>
+        <a class="more" href="sections/07-wazuh-manager-install.md">Open section →</a>
+      </div>
+      <div class="card">
+        <h3>08 — Enroll Wazuh agents</h3>
+        <p>Enroll Windows/Linux agents and verify connectivity and logs.</p>
+        <a class="more" href="sections/08-wazuh-agents-enroll.md">Open section →</a>
+      </div>
+      <div class="card">
+        <h3>09 — Wazuh groups &amp; agent.conf</h3>
+        <p>Create Windows/Linux groups; push FIM, Sysmon, and auditd configs.</p>
+        <a class="more" href="sections/09-wazuh-groups-agentconf.md">Open section →</a>
+      </div>
+      <div class="card">
+        <h3>10 — Users, mapping &amp; snapshots</h3>
+        <p>Create domain users, map shares, and snapshot golden states.</p>
+        <a class="more" href="sections/10-users-and-snapshots.md">Open section →</a>
+      </div>
+      <div class="card">
+        <h3>11 — Optional: Attacker &amp; simulation</h3>
+        <p>Run controlled attacks and validate detection coverage.</p>
+        <a class="more" href="sections/11-attacker-simulation.md">Open section →</a>
+      </div>
+    </div>
 
-    <!-- Evidence -->
-    <section id="evidence" tabindex="-1" class="card">
-      <h2 style="margin:0 0 8px">Evidence gallery</h2>
-      <ul style="margin:0 0 10px 16px">
-        <li>Domain join (Windows): <img src="./assets/images/win-join.png" alt="Windows domain join success" style="max-width:100%;border:1px solid #e5e7eb;border-radius:6px"></li>
-        <li>Domain join (Linux): <img src="./assets/images/linux-join.png" alt="Linux domain join success via Winbind" style="max-width:100%;border:1px solid #e5e7eb;border-radius:6px"></li>
-        <li>Wazuh manager dashboard: <img src="./assets/images/wazuh-ui.png" alt="Wazuh dashboard" style="max-width:100%;border:1px solid #e5e7eb;border-radius:6px"></li>
-        <li>Security Onion desktop: <img src="./assets/images/so-desktop.png" alt="Security Onion desktop" style="max-width:100%;border:1px solid #e5e7eb;border-radius:6px"></li>
-        <li>MailHog UI: <img src="./assets/images/mailhog-ui.png" alt="MailHog web UI" style="max-width:100%;border:1px solid #e5e7eb;border-radius:6px"></li>
-      </ul>
-    </section>
-
-    <!-- Section anchors -->
-    <section id="s01" tabindex="-1" class="card"><h3 style="margin:0 0 6px">01 — Active Directory baseline</h3><p style="margin:0">Install Windows Server, configure AD DS/DNS/DHCP, and prepare the lab domain.</p></section>
-    <section id="s02" tabindex="-1" class="card"><h3 style="margin:0 0 6px">02 — Windows workstation</h3><p style="margin:0">Join Windows 11 to the domain and verify GPO, DNS, and logon.</p></section>
-    <section id="s03" tabindex="-1" class="card"><h3 style="margin:0 0 6px">03 — Linux workstation</h3><p style="margin:0">Join Ubuntu via Winbind + Kerberos; test domain logins and id mapping.</p></section>
-    <section id="s04" tabindex="-1" class="card"><h3 style="margin:0 0 6px">04 — Corporate server &amp; MailHog</h3><p style="margin:0">Deploy lab mail stack for phishing and alerting exercises.</p></section>
-    <section id="s05" tabindex="-1" class="card"><h3 style="margin:0 0 6px">05 — Security Onion desktop</h3><p style="margin:0">Use analyst workstation to explore Zeek/Suricata logs and detections.</p></section>
-    <section id="s06" tabindex="-1" class="card"><h3 style="margin:0 0 6px">06 — Security server (sec‑box) prep</h3><p style="margin:0">Harden Ubuntu base, expand disk, and prepare for Wazuh.</p></section>
-    <section id="s07" tabindex="-1" class="card"><h3 style="margin:0 0 6px">07 — Wazuh manager install</h3><p style="margin:0">Install Wazuh, configure indexer and dashboard, validate health.</p></section>
-    <section id="s08" tabindex="-1" class="card"><h3 style="margin:0 0 6px">08 — Enroll Wazuh agents</h3><p style="margin:0">Enroll Windows/Linux agents and verify connectivity and logs.</p></section>
-    <section id="s09" tabindex="-1" class="card"><h3 style="margin:0 0 6px">09 — Wazuh groups &amp; agent.conf</h3><p style="margin:0">Create Windows/Linux groups; push FIM, Sysmon, and auditd configs.</p></section>
-    <section id="s10" tabindex="-1" class="card"><h3 style="margin:0 0 6px">10 — Users, mapping &amp; snapshots</h3><p style="margin:0">Create domain users, map shares, and snapshot golden states.</p></section>
-    <section id="s11" tabindex="-1" class="card"><h3 style="margin:0 0 6px">11 — Optional: Attacker &amp; simulation</h3><p style="margin:0">Run controlled attacks and validate detection coverage.</p></section>
-
-    <div style="height:28px"></div>
+    <div style="height:32px"></div>
   </main>
 </div>
-
-<script>
-  // Robust navigation handler using data-target and focusable anchors.
-  document.addEventListener('DOMContentLoaded', function(){
-    var nav = document.getElementById('left-nav');
-    if(!nav) return;
-    nav.addEventListener('click', function(e){
-      if(e.target.tagName !== 'BUTTON') return;
-      var id = e.target.getAttribute('data-target');
-      var el = document.getElementById(id);
-      if(!el) return;
-      // Focus the section (works even in sandboxed renderers), then smooth scroll.
-      el.focus({preventScroll:true});
-      el.scrollIntoView({behavior:'smooth', block:'start'});
-      try { history.replaceState(null,'','#'+id); } catch(_) {}
-    });
-  });
-</script>
 
 </body>
 </html>
