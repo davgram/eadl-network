@@ -39,6 +39,8 @@
   .card{border:1px solid #e5e7eb;border-radius:10px;padding:14px;margin:10px 0 16px;background:#fff}
   table{border-collapse:collapse;width:100%;font-size:14px}
   th,td{padding:8px 6px;border-bottom:1px solid #eaeef3;text-align:left}
+
+  /* Ensure offset for sticky header (if any): tweak scroll-margin as needed */
   section{scroll-margin-top:12px}
 </style>
 </head>
@@ -48,7 +50,7 @@
   <!-- Left navbar -->
   <aside class="side">
     <div class="brand"><span>EADL</span> Navigation</div>
-    <nav class="nav">
+    <nav class="nav" id="left-nav">
       <strong>Overview</strong>
       <a href="#intro">Intro</a>
       <a href="#topology">Topology</a>
@@ -72,7 +74,7 @@
   </aside>
 
   <!-- Content -->
-  <main class="main">
+  <main class="main" id="content">
     <!-- Intro -->
     <section id="intro" class="hero">
       <div class="strip"></div>
@@ -189,6 +191,21 @@
     <div style="height:28px"></div>
   </main>
 </div>
+
+<script>
+  // Force anchor scrolling reliably even in odd renderers
+  document.getElementById('left-nav').addEventListener('click', function(e){
+    const a = e.target.closest('a[href^="#"]');
+    if(!a) return;
+    e.preventDefault();
+    const id = a.getAttribute('href').slice(1);
+    const el = document.getElementById(id);
+    if(el){
+      el.scrollIntoView({behavior:'smooth',block:'start'});
+      history.replaceState(null, '', '#'+id);
+    }
+  });
+</script>
 
 </body>
 </html>
