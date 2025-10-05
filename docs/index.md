@@ -27,8 +27,12 @@
   .brand span{background:linear-gradient(90deg,#38bdf8,#22c55e,#a78bfa);-webkit-background-clip:text;background-clip:text;color:transparent}
   .nav{padding:12px}
   .nav strong{display:block;margin:0 6px 8px 6px}
-  .nav a{display:block;margin:8px 6px;padding:8px 10px;border:1px solid #e5e7eb;border-radius:8px;background:#fff;color:#0f172a}
-  .nav a:hover{background:#f1f5f9}
+  .nav button{
+    display:block;width:100%;text-align:left;cursor:pointer;
+    margin:8px 6px;padding:8px 10px;border:1px solid #e5e7eb;border-radius:8px;background:#fff;color:#0f172a;
+    font:inherit;
+  }
+  .nav button:hover{background:#f1f5f9}
 
   /* Content blocks */
   .hero{border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;margin:8px 0 18px;box-shadow:0 3px 16px rgba(2,6,23,.06)}
@@ -40,43 +44,44 @@
   table{border-collapse:collapse;width:100%;font-size:14px}
   th,td{padding:8px 6px;border-bottom:1px solid #eaeef3;text-align:left}
 
-  /* Ensure offset for sticky header (if any): tweak scroll-margin as needed */
-  section{scroll-margin-top:12px}
+  /* Anchor targets: ensure they are focusable and offset-safe */
+  section{scroll-margin-top:14px}
+  section[tabindex="-1"]{outline:0}
 </style>
 </head>
 <body>
 
 <div class="wrap">
-  <!-- Left navbar -->
+  <!-- Left navbar (buttons to avoid <a> sanitization) -->
   <aside class="side">
     <div class="brand"><span>EADL</span> Navigation</div>
     <nav class="nav" id="left-nav">
       <strong>Overview</strong>
-      <a href="#intro">Intro</a>
-      <a href="#topology">Topology</a>
-      <a href="#config">Configuration</a>
-      <a href="#evidence">Evidence</a>
+      <button type="button" data-target="intro">Intro</button>
+      <button type="button" data-target="topology">Topology</button>
+      <button type="button" data-target="config">Configuration</button>
+      <button type="button" data-target="evidence">Evidence</button>
       <hr style="border:none;border-top:1px solid #e5e7eb;margin:10px 6px">
 
       <strong>Sections</strong>
-      <a href="#s01">01 — AD baseline</a>
-      <a href="#s02">02 — Windows workstation</a>
-      <a href="#s03">03 — Linux workstation</a>
-      <a href="#s04">04 — Corp server &amp; MailHog</a>
-      <a href="#s05">05 — Security Onion desktop</a>
-      <a href="#s06">06 — Security server (sec‑box)</a>
-      <a href="#s07">07 — Wazuh manager</a>
-      <a href="#s08">08 — Enroll agents</a>
-      <a href="#s09">09 — Groups &amp; agent.conf</a>
-      <a href="#s10">10 — Users &amp; snapshots</a>
-      <a href="#s11">11 — Attacker &amp; simulation</a>
+      <button type="button" data-target="s01">01 — AD baseline</button>
+      <button type="button" data-target="s02">02 — Windows workstation</button>
+      <button type="button" data-target="s03">03 — Linux workstation</button>
+      <button type="button" data-target="s04">04 — Corp server &amp; MailHog</button>
+      <button type="button" data-target="s05">05 — Security Onion desktop</button>
+      <button type="button" data-target="s06">06 — Security server (sec‑box)</button>
+      <button type="button" data-target="s07">07 — Wazuh manager</button>
+      <button type="button" data-target="s08">08 — Enroll agents</button>
+      <button type="button" data-target="s09">09 — Groups &amp; agent.conf</button>
+      <button type="button" data-target="s10">10 — Users &amp; snapshots</button>
+      <button type="button" data-target="s11">11 — Attacker &amp; simulation</button>
     </nav>
   </aside>
 
   <!-- Content -->
   <main class="main" id="content">
     <!-- Intro -->
-    <section id="intro" class="hero">
+    <section id="intro" tabindex="-1" class="hero">
       <div class="strip"></div>
       <div class="hero-body">
         <h1 style="margin:0 0 6px">Enterprise Attack Detection Lab <span style="opacity:.55;font-weight:600">(EADL)</span></h1>
@@ -92,7 +97,7 @@
     </section>
 
     <!-- Topology -->
-    <section id="topology" class="card">
+    <section id="topology" tabindex="-1" class="card">
       <h2 style="margin:0 0 8px">Topology</h2>
       <p align="center" style="margin:8px 0">
         <img src="./assets/images/topology.png" alt="EADL topology" style="max-width:100%;border:1px solid #e5e7eb;border-radius:6px">
@@ -101,7 +106,7 @@
     </section>
 
     <!-- Configuration -->
-    <section id="config">
+    <section id="config" tabindex="-1">
       <div class="card">
         <h2 style="margin:0 0 8px">Configuration summary</h2>
         <h3 style="margin:10px 0 6px">Hosts</h3>
@@ -164,7 +169,7 @@
     </section>
 
     <!-- Evidence -->
-    <section id="evidence" class="card">
+    <section id="evidence" tabindex="-1" class="card">
       <h2 style="margin:0 0 8px">Evidence gallery</h2>
       <ul style="margin:0 0 10px 16px">
         <li>Domain join (Windows): <img src="./assets/images/win-join.png" alt="Windows domain join success" style="max-width:100%;border:1px solid #e5e7eb;border-radius:6px"></li>
@@ -176,34 +181,37 @@
     </section>
 
     <!-- Section anchors -->
-    <section id="s01" class="card"><h3 style="margin:0 0 6px">01 — Active Directory baseline</h3><p style="margin:0">Install Windows Server, configure AD DS/DNS/DHCP, and prepare the lab domain.</p></section>
-    <section id="s02" class="card"><h3 style="margin:0 0 6px">02 — Windows workstation</h3><p style="margin:0">Join Windows 11 to the domain and verify GPO, DNS, and logon.</p></section>
-    <section id="s03" class="card"><h3 style="margin:0 0 6px">03 — Linux workstation</h3><p style="margin:0">Join Ubuntu via Winbind + Kerberos; test domain logins and id mapping.</p></section>
-    <section id="s04" class="card"><h3 style="margin:0 0 6px">04 — Corporate server &amp; MailHog</h3><p style="margin:0">Deploy lab mail stack for phishing and alerting exercises.</p></section>
-    <section id="s05" class="card"><h3 style="margin:0 0 6px">05 — Security Onion desktop</h3><p style="margin:0">Use analyst workstation to explore Zeek/Suricata logs and detections.</p></section>
-    <section id="s06" class="card"><h3 style="margin:0 0 6px">06 — Security server (sec‑box) prep</h3><p style="margin:0">Harden Ubuntu base, expand disk, and prepare for Wazuh.</p></section>
-    <section id="s07" class="card"><h3 style="margin:0 0 6px">07 — Wazuh manager install</h3><p style="margin:0">Install Wazuh, configure indexer and dashboard, validate health.</p></section>
-    <section id="s08" class="card"><h3 style="margin:0 0 6px">08 — Enroll Wazuh agents</h3><p style="margin:0">Enroll Windows/Linux agents and verify connectivity and logs.</p></section>
-    <section id="s09" class="card"><h3 style="margin:0 0 6px">09 — Wazuh groups &amp; agent.conf</h3><p style="margin:0">Create Windows/Linux groups; push FIM, Sysmon, and auditd configs.</p></section>
-    <section id="s10" class="card"><h3 style="margin:0 0 6px">10 — Users, mapping &amp; snapshots</h3><p style="margin:0">Create domain users, map shares, and snapshot golden states.</p></section>
-    <section id="s11" class="card"><h3 style="margin:0 0 6px">11 — Optional: Attacker &amp; simulation</h3><p style="margin:0">Run controlled attacks and validate detection coverage.</p></section>
+    <section id="s01" tabindex="-1" class="card"><h3 style="margin:0 0 6px">01 — Active Directory baseline</h3><p style="margin:0">Install Windows Server, configure AD DS/DNS/DHCP, and prepare the lab domain.</p></section>
+    <section id="s02" tabindex="-1" class="card"><h3 style="margin:0 0 6px">02 — Windows workstation</h3><p style="margin:0">Join Windows 11 to the domain and verify GPO, DNS, and logon.</p></section>
+    <section id="s03" tabindex="-1" class="card"><h3 style="margin:0 0 6px">03 — Linux workstation</h3><p style="margin:0">Join Ubuntu via Winbind + Kerberos; test domain logins and id mapping.</p></section>
+    <section id="s04" tabindex="-1" class="card"><h3 style="margin:0 0 6px">04 — Corporate server &amp; MailHog</h3><p style="margin:0">Deploy lab mail stack for phishing and alerting exercises.</p></section>
+    <section id="s05" tabindex="-1" class="card"><h3 style="margin:0 0 6px">05 — Security Onion desktop</h3><p style="margin:0">Use analyst workstation to explore Zeek/Suricata logs and detections.</p></section>
+    <section id="s06" tabindex="-1" class="card"><h3 style="margin:0 0 6px">06 — Security server (sec‑box) prep</h3><p style="margin:0">Harden Ubuntu base, expand disk, and prepare for Wazuh.</p></section>
+    <section id="s07" tabindex="-1" class="card"><h3 style="margin:0 0 6px">07 — Wazuh manager install</h3><p style="margin:0">Install Wazuh, configure indexer and dashboard, validate health.</p></section>
+    <section id="s08" tabindex="-1" class="card"><h3 style="margin:0 0 6px">08 — Enroll Wazuh agents</h3><p style="margin:0">Enroll Windows/Linux agents and verify connectivity and logs.</p></section>
+    <section id="s09" tabindex="-1" class="card"><h3 style="margin:0 0 6px">09 — Wazuh groups &amp; agent.conf</h3><p style="margin:0">Create Windows/Linux groups; push FIM, Sysmon, and auditd configs.</p></section>
+    <section id="s10" tabindex="-1" class="card"><h3 style="margin:0 0 6px">10 — Users, mapping &amp; snapshots</h3><p style="margin:0">Create domain users, map shares, and snapshot golden states.</p></section>
+    <section id="s11" tabindex="-1" class="card"><h3 style="margin:0 0 6px">11 — Optional: Attacker &amp; simulation</h3><p style="margin:0">Run controlled attacks and validate detection coverage.</p></section>
 
     <div style="height:28px"></div>
   </main>
 </div>
 
 <script>
-  // Force anchor scrolling reliably even in odd renderers
-  document.getElementById('left-nav').addEventListener('click', function(e){
-    const a = e.target.closest('a[href^="#"]');
-    if(!a) return;
-    e.preventDefault();
-    const id = a.getAttribute('href').slice(1);
-    const el = document.getElementById(id);
-    if(el){
-      el.scrollIntoView({behavior:'smooth',block:'start'});
-      history.replaceState(null, '', '#'+id);
-    }
+  // Robust navigation handler using data-target and focusable anchors.
+  document.addEventListener('DOMContentLoaded', function(){
+    var nav = document.getElementById('left-nav');
+    if(!nav) return;
+    nav.addEventListener('click', function(e){
+      if(e.target.tagName !== 'BUTTON') return;
+      var id = e.target.getAttribute('data-target');
+      var el = document.getElementById(id);
+      if(!el) return;
+      // Focus the section (works even in sandboxed renderers), then smooth scroll.
+      el.focus({preventScroll:true});
+      el.scrollIntoView({behavior:'smooth', block:'start'});
+      try { history.replaceState(null,'','#'+id); } catch(_) {}
+    });
   });
 </script>
 
