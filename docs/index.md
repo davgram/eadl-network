@@ -5,10 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>EADL — Enterprise Attack Detection Lab</title>
 <style>
-  html{scroll-behavior:smooth}
   body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial;color:#0f172a;background:#ffffff}
   a{color:#2563eb;text-decoration:none}
-
   /* Layout */
   .wrap{display:flex;min-height:100vh}
   .side{
@@ -21,28 +19,20 @@
     .wrap{flex-direction:column}
     .side{position:static;width:auto;min-width:0;max-height:none;border-right:0;border-bottom:1px solid #e5e7eb}
   }
-
   /* Sidebar */
-  .brand{padding:14px 14px 12px;border-bottom:1px solid #e5e7eb;font-weight:800}
+  .brand{padding:14px;border-bottom:1px solid #e5e7eb;font-weight:800}
   .brand span{background:linear-gradient(90deg,#38bdf8,#22c55e,#a78bfa);-webkit-background-clip:text;background-clip:text;color:transparent}
   .nav{padding:12px}
-  .nav strong{display:block;margin:0 6px 8px 6px}
+  .nav strong{display:block;margin:0 6px 8px}
   .nav a{display:block;margin:8px 6px;padding:8px 10px;border:1px solid #e5e7eb;border-radius:8px;background:#fff;color:#0f172a}
   .nav a:hover{background:#f1f5f9}
-
-  /* Content blocks */
+  /* Content */
   .hero{border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;margin:8px 0 18px;box-shadow:0 3px 16px rgba(2,6,23,.06)}
   .strip{height:6px;background:linear-gradient(90deg,#0ea5e9,#22c55e,#a855f7)}
   .hero-body{padding:16px}
   .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
   .chip{border:1px solid #e5e7eb;background:#fff;padding:6px 10px;border-radius:999px;font-size:12px}
-
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
-  .card{border:1px solid #e5e7eb;border-radius:12px;background:#fff;padding:14px}
-  .card h3{margin:0 0 6px}
-  .card p{margin:0;color:#475569}
-  .card .more{display:inline-block;margin-top:10px}
-
+  .card{border:1px solid #e5e7eb;border-radius:10px;padding:14px;margin:10px 0 16px;background:#fff}
   table{border-collapse:collapse;width:100%;font-size:14px}
   th,td{padding:8px 6px;border-bottom:1px solid #eaeef3;text-align:left}
 </style>
@@ -50,7 +40,7 @@
 <body>
 
 <div class="wrap">
-  <!-- Left navbar linking to actual pages -->
+  <!-- Left navbar: ONLY navigation to separate pages -->
   <aside class="side">
     <div class="brand"><span>EADL</span> Navigation</div>
     <nav class="nav">
@@ -75,7 +65,7 @@
     </nav>
   </aside>
 
-  <!-- Main content with cards for each section -->
+  <!-- Main page: hero + topology + compact config only -->
   <main class="main">
     <div class="hero">
       <div class="strip"></div>
@@ -93,6 +83,14 @@
     </div>
 
     <section class="card">
+      <h2 style="margin:0 0 8px">Network topology</h2>
+      <p align="center" style="margin:8px 0">
+        <img src="./assets/images/topology.png" alt="EADL topology" style="max-width:100%;border:1px solid #e5e7eb;border-radius:6px">
+      </p>
+      <p style="margin:6px 0 0">NAT network with DC, Windows/Linux clients, Wazuh manager, Security Onion, and a corporate server.</p>
+    </section>
+
+    <section class="card">
       <h2 style="margin:0 0 8px">Configuration summary</h2>
       <table>
         <thead><tr><th>Hostname</th><th>IP Address</th><th>Function</th></tr></thead>
@@ -106,65 +104,6 @@
         </tbody>
       </table>
     </section>
-
-    <h2 style="margin:14px 0 10px">Sections</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>01 — Active Directory baseline</h3>
-        <p>Install Windows Server, configure AD DS/DNS/DHCP, and prepare the lab domain.</p>
-        <a class="more" href="sections/01-ad-baseline.md">Open section →</a>
-      </div>
-      <div class="card">
-        <h3>02 — Windows workstation</h3>
-        <p>Join Windows 11 to the domain and verify GPO, DNS, and logon.</p>
-        <a class="more" href="sections/02-windows-workstation.html">Open section →</a>
-      </div>
-      <div class="card">
-        <h3>03 — Linux workstation</h3>
-        <p>Join Ubuntu via Winbind + Kerberos; test domain logins and id mapping.</p>
-        <a class="more" href="sections/03-linux-workstation.md">Open section →</a>
-      </div>
-      <div class="card">
-        <h3>04 — Corporate server &amp; MailHog</h3>
-        <p>Deploy lab mail stack for phishing and alerting exercises.</p>
-        <a class="more" href="sections/04-corporate-server-mailhog.md">Open section →</a>
-      </div>
-      <div class="card">
-        <h3>05 — Security Onion desktop</h3>
-        <p>Use analyst workstation to explore Zeek/Suricata logs and detections.</p>
-        <a class="more" href="sections/05-security-onion-desktop.md">Open section →</a>
-      </div>
-      <div class="card">
-        <h3>06 — Security server (sec‑box) prep</h3>
-        <p>Harden Ubuntu base, expand disk, and prepare for Wazuh.</p>
-        <a class="more" href="sections/06-security-server-sec-box.md">Open section →</a>
-      </div>
-      <div class="card">
-        <h3>07 — Wazuh manager install</h3>
-        <p>Install Wazuh, configure indexer and dashboard, validate health.</p>
-        <a class="more" href="sections/07-wazuh-manager-install.md">Open section →</a>
-      </div>
-      <div class="card">
-        <h3>08 — Enroll Wazuh agents</h3>
-        <p>Enroll Windows/Linux agents and verify connectivity and logs.</p>
-        <a class="more" href="sections/08-wazuh-agents-enroll.md">Open section →</a>
-      </div>
-      <div class="card">
-        <h3>09 — Wazuh groups &amp; agent.conf</h3>
-        <p>Create Windows/Linux groups; push FIM, Sysmon, and auditd configs.</p>
-        <a class="more" href="sections/09-wazuh-groups-agentconf.md">Open section →</a>
-      </div>
-      <div class="card">
-        <h3>10 — Users, mapping &amp; snapshots</h3>
-        <p>Create domain users, map shares, and snapshot golden states.</p>
-        <a class="more" href="sections/10-users-and-snapshots.md">Open section →</a>
-      </div>
-      <div class="card">
-        <h3>11 — Optional: Attacker &amp; simulation</h3>
-        <p>Run controlled attacks and validate detection coverage.</p>
-        <a class="more" href="sections/11-attacker-simulation.md">Open section →</a>
-      </div>
-    </div>
 
     <div style="height:32px"></div>
   </main>
