@@ -1,41 +1,18 @@
-<!-- EADL Hero Banner -->
-<div style="
-  margin: 6px 0 18px 0;
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 4px 18px rgba(2,6,23,.06);
-">
-  <!-- top gradient strip -->
-  <div style="
-    height: 8px;
-    background: linear-gradient(90deg,#0ea5e9,#22c55e,#a855f7);
-  "></div>
+<!-- EADL: Enterprise Attack Detection Lab -->
 
-  <!-- content row -->
-  <div style="
-    display: grid;
-    grid-template-columns: 10px 1fr;
-    gap: 0;
-    background: linear-gradient(180deg,#f8fafc 0%, #ffffff 100%);
-  ">
-    <!-- left color bar -->
-    <div style="background: linear-gradient(180deg,#0ea5e9,#22c55e);"></div>
+<!-- Hero banner -->
+<div style="margin:8px 0 18px 0;border-radius:14px;overflow:hidden;border:1px solid #e5e7eb;box-shadow:0 4px 18px rgba(2,6,23,.06);">
+  <div style="height:8px;background:linear-gradient(90deg,#0ea5e9,#22c55e,#a855f7);"></div>
 
-    <!-- text block -->
-    <div style="padding: 16px 18px 18px 16px;">
+  <div style="display:grid;grid-template-columns:10px 1fr;gap:0;background:linear-gradient(180deg,#f8fafc 0%, #ffffff 100%);">
+    <div style="background:linear-gradient(180deg,#0ea5e9,#22c55e);"></div>
+
+    <div style="padding:16px 18px 18px 16px;">
       <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
-        <h1 style="
-          margin: 0;
-          font-size: 28px;
-          line-height: 1.15;
-          letter-spacing: .2px;
-        ">
-          Enterprise Attack Detection Lab
-          <span style="opacity:.55;font-weight:600;">(EADL)</span>
+        <h1 style="margin:0;font-size:28px;line-height:1.15;letter-spacing:.2px;">
+          Enterprise Attack Detection Lab <span style="opacity:.55;font-weight:600;">(EADL)</span>
         </h1>
 
-        <!-- quick action buttons -->
         <div style="display:flex;gap:8px;flex-wrap:wrap;">
           <a href="#sections" style="text-decoration:none;border:1px solid #e5e7eb;padding:7px 10px;border-radius:8px;background:#ecfdf5;color:#065f46;font-weight:600;">Explore sections</a>
           <a href="./assets/images/topology.png" style="text-decoration:none;border:1px solid #e5e7eb;padding:7px 10px;border-radius:8px;background:#eff6ff;color:#1d4ed8;font-weight:600;">View topology</a>
@@ -46,21 +23,17 @@
         Build a realistic mini‑enterprise: domain controller, Windows/Linux clients, Wazuh XDR, and Security Onion for network analysis—then attack, detect, and document with screenshots and configs recruiters can verify fast.
       </p>
 
-      <!-- compact key facts row -->
       <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;">
         <div style="border:1px solid #e5e7eb;background:#ffffff;padding:6px 10px;border-radius:999px;font-size:12px;">AD domain: <b>corp.eadl-dc.com</b></div>
         <div style="border:1px solid #e5e7eb;background:#ffffff;padding:6px 10px;border-radius:999px;font-size:12px;">Hosts: <b>6</b></div>
-        <div style="border:1px solid #e5e7eb;background:#ffffff;padding:6px 10px;border-radius:999px;font-size:12px;">Detections: <b>attack & defend</b></div>
+        <div style="border:1px solid #e5e7eb;background:#ffffff;padding:6px 10px;border-radius:999px;font-size:12px;">Detections: <b>attack &amp; defend</b></div>
       </div>
     </div>
   </div>
 </div>
 
-
-
-
-<!-- Top author bar with LinkedIn/GitHub -->
-<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;border:1px solid #e5e7eb;background:#f8fafc;padding:10px 12px;border-radius:10px;margin:6px 0 14px 0;">
+<!-- Top author bar -->
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;border:1px solid #e5e7eb;background:#f8fafc;padding:10px 12px;border-radius:10px;margin:6px 0 16px 0;">
   <div style="font-weight:700;">
     Created by: Davide Gramuglia — SOC analyst–oriented lab showcasing AD, Linux, SIEM, and detection workflows.
   </div>
@@ -77,7 +50,7 @@
 </div>
 
 <!-- Hero header -->
-<div style="border:1px solid #e5e7eb;background:linear-gradient(180deg,#f8fafc, #ffffff);padding:18px 18px;border-radius:12px;margin:10px 0 16px 0;">
+<div style="border:1px solid #e5e7eb;background:linear-gradient(180deg,#f8fafc, #ffffff);padding:18px 18px;border-radius:12px;margin:10px 0 18px 0;">
   <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;justify-content:space-between;">
     <div style="font-size:20px;font-weight:700;line-height:1.2;">Enterprise Attack Detection Lab</div>
     <div style="display:flex;gap:6px;flex-wrap:wrap;">
@@ -94,107 +67,161 @@
   </p>
 </div>
 
-<!-- What this lab does: UX summary -->
-<div style="border:1px solid #e5e7eb;background:#f8fafc;padding:14px;border-radius:10px;margin:10px 0 16px 0;">
-  <p style="margin:0 0 6px 0;font-weight:700;">What this lab does</p>
-  <ul style="margin:0;padding-left:18px;">
-    <li>Set up a simulated enterprise network with multiple workstations and a Windows Server domain controller.</li>
-    <li>Deploy Wazuh (XDR/SIEM) and Security Onion for endpoint and network visibility.</li>
-    <li>Run attacker techniques against the lab, then detect, triage, and document the defenses and findings.</li>
-  </ul>
-  <div style="border-left:4px solid #f59e0b;background:#fffbea;padding:8px 10px;border-radius:6px;margin-top:10px;">
-    <strong>Note:</strong> Weak passwords are used intentionally for cracking/detection exercises; this is not acceptable in production and is confined to the lab.
-  </div>
-</div>
-
-<!-- Image tip -->
-<div style="border:1px solid #e5e7eb;background:#fffbea;border-left:6px solid #f59e0b;padding:12px 14px;border-radius:8px;margin:12px 0;">
-  <p style="margin:0;">
-    Images: place PNG/JPG files in <code>docs/assets/images</code> and reference them with relative paths like
-    <code>./assets/images/topology.png</code>. This works reliably on GitHub Pages. Do not start image paths with <code>/</code>.
-  </p>
-</div>
-
-
-### Topology
-
-<p align="center">
+<!-- Topology -->
+<h3 id="topology" style="margin:16px 0 8px 0;">Topology</h3>
+<p align="center" style="margin:8px 0;">
   <img src="./assets/images/topology.png" alt="EADL enterprise topology diagram" style="max-width:100%;border:1px solid #e5e7eb;border-radius:6px;">
 </p>
-
 <p style="margin:8px 0 0 0;">
-  Add a simple diagram (draw.io/diagrams.net or screenshots) that shows the NAT network, DC, clients, Wazuh, Security Onion, and the corporate server. Save as <code>docs/assets/images/topology.png</code>.
+  A simple diagram should show the NAT network, DC, clients, Wazuh, Security Onion, and the corporate server. Save as <code>docs/assets/images/topology.png</code>.
 </p>
 
-### Configuration summary
+<!-- Configuration summary -->
+<h3 style="margin:18px 0 10px 0;">Configuration summary</h3>
 
-#### Hosts
+<h4 style="margin:10px 0 6px 0;">Hosts</h4>
+<table style="border-collapse:collapse;width:100%;font-size:14px;">
+  <thead>
+    <tr>
+      <th style="text-align:left;border-bottom:1px solid #e5e7eb;padding:6px 4px;">Hostname</th>
+      <th style="text-align:left;border-bottom:1px solid #e5e7eb;padding:6px 4px;">IP Address</th>
+      <th style="text-align:left;border-bottom:1px solid #e5e7eb;padding:6px 4px;">Function</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">eadl-dc</td><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">10.0.0.5</td><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">Domain Controller (AD DS, DNS, DHCP)</td></tr>
+    <tr><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">eadl-win-client</td><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">10.0.0.100</td><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">Windows Workstation (domain‑joined)</td></tr>
+    <tr><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">eadl-linux-client</td><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">10.0.0.101</td><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">Linux Desktop (AD‑joined via Winbind)</td></tr>
+    <tr><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">eadl-corp-svr</td><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">10.0.0.8</td><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">Corporate Server (MailHog)</td></tr>
+    <tr><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">sec-box</td><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">10.0.0.10</td><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">Wazuh Manager (SIEM)</td></tr>
+    <tr><td style="padding:6px 4px;">eadl-sec-work</td><td style="padding:6px 4px;">10.0.0.103</td><td style="padding:6px 4px;">Security Onion desktop (NSM/analysis)</td></tr>
+  </tbody>
+</table>
 
-| Hostname | IP Address | Function |
-|---|---|---|
-| eadl-dc | 10.0.0.5 | Domain Controller (AD DS, DNS, DHCP) |
-| eadl-win-client | 10.0.0.100 | Windows Workstation (domain‑joined) |
-| eadl-linux-client | 10.0.0.101 | Linux Desktop (AD‑joined via Winbind) |
-| eadl-corp-svr | 10.0.0.8 | Corporate Server (MailHog) |
-| sec-box | 10.0.0.10 | Wazuh Manager (SIEM) |
-| eadl-sec-work | 10.0.0.103 | Security Onion desktop (NSM/analysis) |
+<h4 style="margin:12px 0 6px 0;">VM specs</h4>
+<table style="border-collapse:collapse;width:100%;font-size:14px;">
+  <thead>
+    <tr>
+      <th style="text-align:left;border-bottom:1px solid #e5e7eb;padding:6px 4px;">VM Name</th>
+      <th style="text-align:left;border-bottom:1px solid #e5e7eb;padding:6px 4px;">Operating System</th>
+      <th style="text-align:left;border-bottom:1px solid #e5e7eb;padding:6px 4px;">Specs</th>
+      <th style="text-align:left;border-bottom:1px solid #e5e7eb;padding:6px 4px;">Storage (min)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">eadl-dc</td><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">Windows Server 2025</td><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">2 CPU / 4096 MB</td><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">50 GB</td></tr>
+    <tr><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">eadl-win-client</td><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">Windows 11 Enterprise</td><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">2 CPU / 4096 MB</td><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">80 GB</td></tr>
+    <tr><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">eadl-linux-client</td><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">Ubuntu 22.04 Desktop</td><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">1 CPU / 2048 MB</td><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">80 GB</td></tr>
+    <tr><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">eadl-sec-work</td><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">Security Onion 2.4.x</td><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">1 CPU / 2048 MB</td><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">55 GB</td></tr>
+    <tr><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">sec-box</td><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">Ubuntu 22.04 Desktop</td><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">2 CPU / 4096 MB</td><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">80 GB</td></tr>
+    <tr><td style="padding:6px 4px;">eadl-corp-svr</td><td style="padding:6px 4px;">Ubuntu 22.04 Server</td><td style="padding:6px 4px;">1 CPU / 2048 MB</td><td style="padding:6px 4px;">25 GB</td></tr>
+  </tbody>
+</table>
 
-#### VM specs
+<h4 style="margin:12px 0 6px 0;">Core network</h4>
+<table style="border-collapse:collapse;width:100%;font-size:14px;">
+  <thead>
+    <tr>
+      <th style="text-align:left;border-bottom:1px solid #e5e7eb;padding:6px 4px;">Setting</th>
+      <th style="text-align:left;border-bottom:1px solid #e5e7eb;padding:6px 4px;">Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">VirtualBox NAT network name</td><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">eadl-network</td></tr>
+    <tr><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">Subnet / Gateway</td><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">10.0.0.0/24, gw 10.0.0.1</td></tr>
+    <tr><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">AD Domain</td><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">corp.eadl-dc.com</td></tr>
+    <tr><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">DC DNS forwarder</td><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">8.8.8.8</td></tr>
+    <tr><td style="padding:6px 4px;">DHCP scope (lab)</td><td style="padding:6px 4px;">10.0.0.100–10.0.0.200</td></tr>
+  </tbody>
+</table>
 
-| VM Name | Operating System | Specs | Storage (min) |
-|---|---|---|---|
-| eadl-dc | Windows Server 2025 | 2 CPU / 4096 MB | 50 GB |
-| eadl-win-client | Windows 11 Enterprise | 2 CPU / 4096 MB | 80 GB |
-| eadl-linux-client | Ubuntu 22.04 Desktop | 1 CPU / 2048 MB | 80 GB |
-| eadl-sec-work | Security Onion 2.4.x | 1 CPU / 2048 MB | 55 GB |
-| sec-box | Ubuntu 22.04 Desktop | 2 CPU / 4096 MB | 80 GB |
-| eadl-corp-svr | Ubuntu 22.04 Server | 1 CPU / 2048 MB | 25 GB |
+<h4 style="margin:12px 0 6px 0;">Accounts (public‑safe placeholders)</h4>
+<table style="border-collapse:collapse;width:100%;font-size:14px;">
+  <thead>
+    <tr>
+      <th style="text-align:left;border-bottom:1px solid #e5e7eb;padding:6px 4px;">Account</th>
+      <th style="text-align:left;border-bottom:1px solid #e5e7eb;padding:6px 4px;">Password</th>
+      <th style="text-align:left;border-bottom:1px solid #e5e7eb;padding:6px 4px;">Host</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">Domain Administrator</td><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">[REDACTED]</td><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">eadl-dc</td></tr>
+    <tr><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">Windows client user (domain)</td><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">[REDACTED]</td><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">eadl-win-client</td></tr>
+    <tr><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">Linux client user (domain)</td><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">[REDACTED]</td><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">eadl-linux-client</td></tr>
+    <tr><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">Corp server admin</td><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">[REDACTED]</td><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">eadl-corp-svr</td></tr>
+    <tr><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">Wazuh admin</td><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">[REDACTED]</td><td style="padding:6px 4px;border-bottom:1px solid #f1f5f9;">sec-box</td></tr>
+    <tr><td style="padding:6px 4px;">Security Onion workstation</td><td style="padding:6px 4px;">[REDACTED]</td><td style="padding:6px 4px;">eadl-sec-work</td></tr>
+  </tbody>
+</table>
 
-#### Core network
+<!-- Evidence gallery -->
+<h3 style="margin:18px 0 10px 0;">Evidence gallery</h3>
+<ul style="margin:0 0 10px 16px;">
+  <li>Domain join (Windows): <img src="./assets/images/win-join.png" alt="Windows domain join success" style="max-width:100%;border:1px solid #e5e7eb;border-radius:6px;"></li>
+  <li>Domain join (Linux): <img src="./assets/images/linux-join.png" alt="Linux domain join success via Winbind" style="max-width:100%;border:1px solid #e5e7eb;border-radius:6px;"></li>
+  <li>Wazuh manager dashboard: <img src="./assets/images/wazuh-ui.png" alt="Wazuh dashboard" style="max-width:100%;border:1px solid #e5e7eb;border-radius:6px;"></li>
+  <li>Security Onion desktop: <img src="./assets/images/so-desktop.png" alt="Security Onion desktop" style="max-width:100%;border:1px solid #e5e7eb;border-radius:6px;"></li>
+  <li>MailHog UI: <img src="./assets/images/mailhog-ui.png" alt="MailHog web UI" style="max-width:100%;border:1px solid #e5e7eb;border-radius:6px;"></li>
+</ul>
 
-| Setting | Value |
-|---|---|
-| VirtualBox NAT network name | eadl-network |
-| Subnet / Gateway | 10.0.0.0/24, gw 10.0.0.1 |
-| AD Domain | corp.eadl-dc.com |
-| DC DNS forwarder | 8.8.8.8 |
-| DHCP scope (lab) | 10.0.0.100–10.0.0.200 |
+<hr style="border:none;border-top:1px solid #e5e7eb;margin:18px 0;">
 
-#### Accounts (public‑safe placeholders)
+<!-- Sections: improved style -->
+<h3 id="sections" style="margin:12px 0 8px 0;">Sections</h3>
 
-| Account | Password | Host |
-|---|---|---|
-| Domain Administrator | [REDACTED] | eadl-dc |
-| Windows client user (domain) | [REDACTED] | eadl-win-client |
-| Linux client user (domain) | [REDACTED] | eadl-linux-client |
-| Corp server admin | [REDACTED] | eadl-corp-svr |
-| Wazuh admin | [REDACTED] | sec-box |
-| Security Onion workstation | [REDACTED] | eadl-sec-work |
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;">
+  <a href="sections/01-ad-baseline.md" style="text-decoration:none;border:1px solid #e5e7eb;border-radius:10px;padding:12px;background:#ffffff;display:block;">
+    <div style="font-weight:700;margin-bottom:6px;">01 — Active Directory baseline</div>
+    <div style="color:#475569;font-size:13px;">Install Windows Server, configure AD DS/DNS/DHCP, and prepare the lab domain.</div>
+  </a>
 
-### Evidence gallery
+  <a href="sections/02-windows-workstation.html" style="text-decoration:none;border:1px solid #e5e7eb;border-radius:10px;padding:12px;background:#ffffff;display:block;">
+    <div style="font-weight:700;margin-bottom:6px;">02 — Windows workstation</div>
+    <div style="color:#475569;font-size:13px;">Join Windows 11 to the domain and verify GPO, DNS, and logon.</div>
+  </a>
 
-- Domain join (Windows): <img src="./assets/images/win-join.png" alt="Windows domain join success" style="max-width:100%;border:1px solid #e5e7eb;border-radius:6px;">  
-- Domain join (Linux): <img src="./assets/images/linux-join.png" alt="Linux domain join success via Winbind" style="max-width:100%;border:1px solid #e5e7eb;border-radius:6px;">  
-- Wazuh manager dashboard: <img src="./assets/images/wazuh-ui.png" alt="Wazuh dashboard" style="max-width:100%;border:1px solid #e5e7eb;border-radius:6px;">  
-- Security Onion desktop: <img src="./assets/images/so-desktop.png" alt="Security Onion desktop" style="max-width:100%;border:1px solid #e5e7eb;border-radius:6px;">  
-- MailHog UI: <img src="./assets/images/mailhog-ui.png" alt="MailHog web UI" style="max-width:100%;border:1px solid #e5e7eb;border-radius:6px;">
+  <a href="sections/03-linux-workstation.md" style="text-decoration:none;border:1px solid #e5e7eb;border-radius:10px;padding:12px;background:#ffffff;display:block;">
+    <div style="font-weight:700;margin-bottom:6px;">03 — Linux workstation</div>
+    <div style="color:#475569;font-size:13px;">Join Ubuntu via Winbind + Kerberos; test domain logins and id mapping.</div>
+  </a>
 
-<p style="margin:8px 0 0 0;">
-  Add screenshots with filenames matching the references above into <code>docs/assets/images</code>. Use short, clear captions in the surrounding text.
-</p>
+  <a href="sections/04-corporate-server-mailhog.md" style="text-decoration:none;border:1px solid #e5e7eb;border-radius:10px;padding:12px;background:#ffffff;display:block;">
+    <div style="font-weight:700;margin-bottom:6px;">04 — Corporate server &amp; MailHog</div>
+    <div style="color:#475569;font-size:13px;">Deploy lab mail stack for phishing and alerting exercises.</div>
+  </a>
 
----
+  <a href="sections/05-security-onion-desktop.md" style="text-decoration:none;border:1px solid #e5e7eb;border-radius:10px;padding:12px;background:#ffffff;display:block;">
+    <div style="font-weight:700;margin-bottom:6px;">05 — Security Onion desktop</div>
+    <div style="color:#475569;font-size:13px;">Use analyst workstation to explore Zeek/Suricata logs and detections.</div>
+  </a>
 
-## Sections
+  <a href="sections/06-security-server-sec-box.md" style="text-decoration:none;border:1px solid #e5e7eb;border-radius:10px;padding:12px;background:#ffffff;display:block;">
+    <div style="font-weight:700;margin-bottom:6px;">06 — Security server (sec‑box) prep</div>
+    <div style="color:#475569;font-size:13px;">Harden Ubuntu base, expand disk, and prepare for Wazuh.</div>
+  </a>
 
-- [01 — Active Directory baseline](sections/01-ad-baseline.md)
-- [02 — Windows workstation (AD join)](sections/02-windows-workstation.html)
-- [03 — Linux workstation (AD join)](sections/03-linux-workstation.md)
-- [04 — Corporate server & MailHog](sections/04-corporate-server-mailhog.md)
-- [05 — Security Onion desktop](sections/05-security-onion-desktop.md)
-- [06 — Security server (sec-box) prep](sections/06-security-server-sec-box.md)
-- [07 — Wazuh manager install + disk expansion](sections/07-wazuh-manager-install.md)
-- [08 — Enroll Wazuh agents (Win/Linux)](sections/08-wazuh-agents-enroll.md)
-- [09 — Wazuh groups & agent.conf](sections/09-wazuh-groups-agentconf.md)
-- [10 — Users, mapping & snapshots](sections/10-users-and-snapshots.md)
-- [11 — Optional: Attacker & simulation](sections/11-attacker-simulation.md)
+  <a href="sections/07-wazuh-manager-install.md" style="text-decoration:none;border:1px solid #e5e7eb;border-radius:10px;padding:12px;background:#ffffff;display:block;">
+    <div style="font-weight:700;margin-bottom:6px;">07 — Wazuh manager install</div>
+    <div style="color:#475569;font-size:13px;">Install Wazuh, configure indexer and dashboard, validate health.</div>
+  </a>
+
+  <a href="sections/08-wazuh-agents-enroll.md" style="text-decoration:none;border:1px solid #e5e7eb;border-radius:10px;padding:12px;background:#ffffff;display:block;">
+    <div style="font-weight:700;margin-bottom:6px;">08 — Enroll Wazuh agents</div>
+    <div style="color:#475569;font-size:13px;">Enroll Windows/Linux agents and verify connectivity and logs.</div>
+  </a>
+
+  <a href="sections/09-wazuh-groups-agentconf.md" style="text-decoration:none;border:1px solid #e5e7eb;border-radius:10px;padding:12px;background:#ffffff;display:block;">
+    <div style="font-weight:700;margin-bottom:6px;">09 — Wazuh groups &amp; agent.conf</div>
+    <div style="color:#475569;font-size:13px;">Create Windows/Linux groups; push FIM, Sysmon, and auditd configs.</div>
+  </a>
+
+  <a href="sections/10-users-and-snapshots.md" style="text-decoration:none;border:1px solid #e5e7eb;border-radius:10px;padding:12px;background:#ffffff;display:block;">
+    <div style="font-weight:700;margin-bottom:6px;">10 — Users, mapping &amp; snapshots</div>
+    <div style="color:#475569;font-size:13px;">Create domain users, map shares, and snapshot golden states.</div>
+  </a>
+
+  <a href="sections/11-attacker-simulation.md" style="text-decoration:none;border:1px solid #e5e7eb;border-radius:10px;padding:12px;background:#ffffff;display:block;">
+    <div style="font-weight:700;margin-bottom:6px;">11 — Optional: Attacker &amp; simulation</div>
+    <div style="color:#475569;font-size:13px;">Run controlled attacks and validate detection coverage.</div>
+  </a>
+</div>
